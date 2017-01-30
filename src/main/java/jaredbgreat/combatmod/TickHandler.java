@@ -11,28 +11,21 @@ public final class TickHandler {
 	TickHandler() {}
 	
 	@SubscribeEvent
-	@EventHandler
 	public void onPlayerTick(TickEvent.PlayerTickEvent event) {}
 	
 	
 	@SubscribeEvent
-	@EventHandler
 	public void onClientTick(TickEvent.ClientTickEvent event) {}
 	
 	
 	@SubscribeEvent
-	@EventHandler
-	public void onServerTick(TickEvent.ServerTickEvent event) {
-		// TODO: Logic!!!!  (No, really call other logic.)
-	}
+	public void onServerTick(TickEvent.ServerTickEvent event) {}
 	
 	
 	@SubscribeEvent
-	@EventHandler
 	public void onRenderTick(TickEvent.RenderTickEvent event) {}
 	
 	
 	@SubscribeEvent
-	@EventHandler
 	public void onWorldTick(TickEvent.WorldTickEvent event) {}
 }
