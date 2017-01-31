@@ -1,5 +1,19 @@
 package jaredbgreat.combatmod;
 
+/* 
+ * This mod is the creation and copyright (c) 2017 
+ * of Jared Blackburn (JaredBGreat).
+ * 
+ * NO WARRANTEE, OF ANY KIND.  This is freely available, and offers
+ * no warrantees or guarantees, not even merchantability or fitness 
+ * for a particular purpose.  No liability is accepted by the author 
+ * for any use, proper or improper, of this mod or any dirivative 
+ * there of, or any damages resulting from its use.
+ * 
+ * It is licensed under the creative commons 4.0 attribution license:  
+ * https://creativecommons.org/licenses/by/4.0/legalcode
+*/
+
 import jaredbgreat.combatmod.combat.AttackHandler;
 import jaredbgreat.combatmod.combat.PlayerHandler;
 import net.minecraft.client.Minecraft;
@@ -12,7 +26,11 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 
-
+/** A mod to eliminate spam-click combat, in a way similar to later vanilla. 
+ *  game versions.
+ * 
+ * @author JaredBGreat (Jared Blackburn)
+ */
 @Mod(modid=Info.ID, name=Info.NAME, version=Info.VERSION, acceptableRemoteVersions=Info.VERSION)
 public class CombatMod {
 	@Instance(Info.ID)
@@ -26,31 +44,21 @@ public class CombatMod {
     
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-    	//System.out.println(Info.NAME + " is in preInit, should now load config.");
     	game = Minecraft.getMinecraft();
     	players = PlayerHandler.getPlayerHandler();
     	attackHandler = AttackHandler.getAttackHandler();
     	FMLCommonHandler.instance().bus().register(updater = new TickHandler());
-    	//MinecraftForge.EVENT_BUS.register(updater = new TickHandler());
-    	// TODO: All this!
     }
 
     
     @EventHandler 
-    public void init(FMLInitializationEvent event) {
-    	// TODO: All this!
-    }
+    public void init(FMLInitializationEvent event) {}
     
     
     @EventHandler
-    public void postInit(FMLPostInitializationEvent event) {
-    	// TODO: All this!
-    }
+    public void postInit(FMLPostInitializationEvent event) {}
     
     
     @EventHandler
-    public void serverLoad(FMLServerStartingEvent event) {
-    }
-    	
-
+    public void serverLoad(FMLServerStartingEvent event) {}   	
 }

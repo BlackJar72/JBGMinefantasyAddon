@@ -1,5 +1,19 @@
 package jaredbgreat.combatmod.combat;
 
+/* 
+ * This mod is the creation and copyright (c) 2017 
+ * of Jared Blackburn (JaredBGreat).
+ * 
+ * NO WARRANTEE, OF ANY KIND.  This is freely available, and offers
+ * no warrantees or guarantees, not even merchantability or fitness 
+ * for a particular purpose.  No liability is accepted by the author 
+ * for any use, proper or improper, of this mod or any dirivative 
+ * there of, or any damages resulting from its use.
+ * 
+ * It is licensed under the creative commons 4.0 attribution license:  
+ * https://creativecommons.org/licenses/by/4.0/legalcode
+*/	
+
 import jaredbgreat.combatmod.Info;
 
 import java.util.List;
@@ -20,26 +34,34 @@ public class PlayerData implements IExtendedEntityProperties {
 	static final String CD_TAG   = "cooldown";
 	static final String PT_TAG   = "parrytime";
 	
-	private static final float PREMATURE_FACTOR = 0.8f;
-	private static final byte MAX_COOLDOWN = 32; // Stand-in until weapons types
+	private static final float PREMATURE_FACTOR = 0.9f;
+	private static final byte MAX_COOLDOWN = 24; // Stand-in until weapons types
 	
+	// FIXME: Needed?  Useful?
 	World world;
 	UUID player;
 	
 	private byte cooldown  = 0;
 	private boolean ready  = true;
+	private boolean swing  = false;
 	
 	
 	PlayerData(EntityPlayer entity) {
 		world = entity.getEntityWorld();
 		player = entity.getUniqueID();
 	}
+	
+	
+	public void attack() {
+		swing = true;
+		PlayerHandler.instance.addPlayer(this);
+	}
 
 	
 	public void startCooldown() {
 		cooldown = MAX_COOLDOWN;
 		ready = false;
-		PlayerHandler.instance.addPlayer(this);
+		swing = false;
 	}
 	
 	public float getModifiedDamage(float in) {
@@ -55,6 +77,9 @@ public class PlayerData implements IExtendedEntityProperties {
 	
 	
 	boolean update() {
+		if(swing) {
+			startCooldown();
+		}
 		if(cooldown > 0) {
 			cooldown--;
 			return false;
@@ -66,8 +91,7 @@ public class PlayerData implements IExtendedEntityProperties {
 	
 	/*------------------------------------------------------------------------*/
 	/*                    INHERITED NBT PROCESSING                            */
-	/*                     and supporting methods                             */
-	/*                    (This is very important)                            */
+	/*                     and supporting methods                            */
 	/*------------------------------------------------------------------------*/
 	
 	
