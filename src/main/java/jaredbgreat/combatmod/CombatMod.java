@@ -1,5 +1,6 @@
 package jaredbgreat.combatmod;
 
+import jaredbgreat.combatmod.combat.AttackHandler;
 import jaredbgreat.combatmod.combat.PlayerHandler;
 import net.minecraft.client.Minecraft;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -19,6 +20,7 @@ public class CombatMod {
 	private static Minecraft game;
 	private static TickHandler updater;
 	private static PlayerHandler players;
+	private static AttackHandler attackHandler;
 	
 
     
@@ -26,7 +28,8 @@ public class CombatMod {
     public void preInit(FMLPreInitializationEvent event) {
     	//System.out.println(Info.NAME + " is in preInit, should now load config.");
     	game = Minecraft.getMinecraft();
-    	players = new PlayerHandler();
+    	players = PlayerHandler.getPlayerHandler();
+    	attackHandler = AttackHandler.getAttackHandler();
     	FMLCommonHandler.instance().bus().register(updater = new TickHandler());
     	//MinecraftForge.EVENT_BUS.register(updater = new TickHandler());
     	// TODO: All this!

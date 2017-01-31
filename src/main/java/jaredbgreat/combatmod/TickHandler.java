@@ -1,14 +1,18 @@
 package jaredbgreat.combatmod;
 
-import cpw.mods.fml.common.Mod.EventHandler;
+import jaredbgreat.combatmod.combat.PlayerHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 
 public final class TickHandler {
-	private long counter = 0;
+	private static PlayerHandler playerHandler;
 	
-	TickHandler() {}
+	TickHandler() {
+		playerHandler = PlayerHandler.getPlayerHandler();
+	}
 	
 	@SubscribeEvent
 	public void onPlayerTick(TickEvent.PlayerTickEvent event) {}
@@ -19,7 +23,9 @@ public final class TickHandler {
 	
 	
 	@SubscribeEvent
-	public void onServerTick(TickEvent.ServerTickEvent event) {}
+	public void onServerTick(TickEvent.ServerTickEvent event) {
+		playerHandler.update();
+	}
 	
 	
 	@SubscribeEvent
