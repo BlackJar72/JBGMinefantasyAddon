@@ -17,29 +17,24 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.0"
-group= "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "modid"
+version = "0.1.0-MC1.7.10"
+group= "jaredbgreat.jbgnospawmattack" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "NoSpamAttack"
 
 minecraft {
-    version = "1.7.10-10.13.4.1614-1.7.10"
+    version = "1.7.10-10.13.2.1230"
     runDir = "eclipse"
 }
 
+sourceCompatibility = targetCompatibility = "1.6"
+
 dependencies {
-    // you may put jars on which you depend on in ./libs
-    // or you may define them like so..
-    //compile "some.group:artifact:version:classifier"
-    //compile "some.group:artifact:version"
-      
-    // real examples
-    //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
-    //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
-
-    // for more info...
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
-
+	compile files (
+		"libs/1.7.10-dynamicswordskills-1.7-deobf.jar"
+	)
+	compile files (
+		"libs/MineFantasyII-2.6.11-deobf.jar"
+	)
 }
 
 processResources

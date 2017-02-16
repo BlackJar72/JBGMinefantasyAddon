@@ -14,8 +14,11 @@ package jaredbgreat.combatmod;
  * https://creativecommons.org/licenses/by/4.0/legalcode
 */
 
+import jaredbgreat.combatmod.blocks.MF1Blocks;
 import jaredbgreat.combatmod.combat.AttackHandler;
 import jaredbgreat.combatmod.combat.PlayerHandler;
+import jaredbgreat.combatmod.recipes.BasicRecipes;
+import jaredbgreat.combatmod.worldgen.GenerationHandler;
 import net.minecraft.client.Minecraft;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
@@ -25,13 +28,15 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 /** A mod to eliminate spam-click combat, in a way similar to later vanilla. 
  *  game versions.
  * 
  * @author JaredBGreat (Jared Blackburn)
  */
-@Mod(modid=Info.ID, name=Info.NAME, version=Info.VERSION, acceptableRemoteVersions=Info.VERSION)
+@Mod(modid=Info.ID, name=Info.NAME, version=Info.VERSION, acceptableRemoteVersions=Info.VERSION, 
+dependencies = "required-after:minefantasy2;after:dynamicswordskills;after:dldungeonsjbg")
 public class CombatMod {
 	@Instance(Info.ID)
 	private static CombatMod instance;
@@ -39,6 +44,7 @@ public class CombatMod {
 	private static TickHandler updater;
 	private static PlayerHandler players;
 	private static AttackHandler attackHandler;
+	public static GenerationHandler generationHandler;
 	
 
     
@@ -48,6 +54,7 @@ public class CombatMod {
     	players = PlayerHandler.getPlayerHandler();
     	attackHandler = AttackHandler.getAttackHandler();
     	FMLCommonHandler.instance().bus().register(updater = new TickHandler());
+    	BlockInit();
     }
 
     
@@ -60,5 +67,13 @@ public class CombatMod {
     
     
     @EventHandler
-    public void serverLoad(FMLServerStartingEvent event) {}   	
+    public void serverLoad(FMLServerStartingEvent event) {}   
+    
+    
+    private void BlockInit() {
+		MF1Blocks.register();
+		generationHandler = new GenerationHandler();
+		GameRegistry.registerWorldGenerator(generationHandler, 64);
+		BasicRecipes.register();
+	}
 }

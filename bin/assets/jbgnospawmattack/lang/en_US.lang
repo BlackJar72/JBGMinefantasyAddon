@@ -1,0 +1,21 @@
+tile.jbgnospawmattack-granite0.name=Granite
+tile.jbgnospawmattack-granite1.name=Granite Brick
+tile.jbgnospawmattack-granite2.name=Cracked Granite Brick
+tile.jbgnospawmattack-granite3.name=Mossy Granite Brick
+
+tile.jbgnospawmattack-slate0.name=Slate
+tile.jbgnospawmattack-slate1.name=Slate Tiles
+tile.jbgnospawmattack-slate2.name=Diagonal Slate Tiles
+tile.jbgnospawmattack-slate3.name=Slate Brick
+
+tile.jbgnospawmattack-slate-slab0.name=Slate Slab
+tile.jbgnospawmattack-slate-slab1.name=Slate Tile Slab 
+tile.jbgnospawmattack-slate-slab2.name=Diagonal Slate Tile Slab
+tile.jbgnospawmattack-slate-slab3.name=Slate Brick Slab
+
+tile.jbgnospawmattack-granite-slab0.name=Granite Slab
+tile.jbgnospawmattack-granite-slab1.name=Granite Brick Slab
+tile.jbgnospawmattack-granite-slab2.name=Cracked Granite Brick Slab
+tile.jbgnospawmattack-granite-slab3.name=Mossy Granite Brick Slab
+
+tile.jbgnospawmattack-storage0.name=Sulphur Block

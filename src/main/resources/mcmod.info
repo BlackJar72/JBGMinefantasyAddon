@@ -1,8 +1,8 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "jbgnospawmattack",
+  "name": "No Spam Attack",
+  "description": "Simplified 1.9-style spam-attack nerfing.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
