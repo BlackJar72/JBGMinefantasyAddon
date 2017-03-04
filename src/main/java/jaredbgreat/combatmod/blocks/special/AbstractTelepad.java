@@ -5,9 +5,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.util.AxisAlignedBB;
 
 public abstract class AbstractTelepad extends BlockContainer {
 	static final float HEIGHT = 0.0625f;
+	public static final double LEVEL = 1.0d - HEIGHT;
 
 	protected AbstractTelepad(String name) {
 		super(Material.rock);

@@ -10,8 +10,8 @@ import net.minecraft.world.World;
 public class Teletoy extends AbstractTelepad {
 
 	public Teletoy() {
-		super("tpad01a");
-		// TODO Auto-generated constructor stub
+		super("tpad02a");
+		setLightLevel(0.75f);
 	}
 
 	@Override
@@ -20,12 +20,17 @@ public class Teletoy extends AbstractTelepad {
 	}
 	
 	
-	public void onEntityCollideWithBlock(World world, int x, int y, int z, Entity entity) {
+	@Override
+	public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {
 		TileEntity te = world.getTileEntity(x, y, z);
 		if(te instanceof TeletoyLogic) {
 			TeletoyLogic logic = (TeletoyLogic)te;
+			logic.onActivated(world, entity);
 		}
 	}
+	
+	
+	
 	
 	
 	

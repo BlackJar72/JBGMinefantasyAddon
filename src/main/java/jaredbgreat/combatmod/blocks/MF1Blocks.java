@@ -5,7 +5,12 @@ import jaredbgreat.combatmod.blocks.itemblock.ItemBasicSlab;
 import jaredbgreat.combatmod.blocks.itemblock.ItemBlockMF1;
 import jaredbgreat.combatmod.blocks.special.Landingpad;
 import jaredbgreat.combatmod.blocks.special.Telepad;
+import jaredbgreat.combatmod.blocks.special.TelepadItem;
 import jaredbgreat.combatmod.blocks.special.Teletoy;
+import jaredbgreat.combatmod.blocks.special.TeletoyItem;
+import jaredbgreat.combatmod.blocks.tileentities.LandingpadLogic;
+import jaredbgreat.combatmod.blocks.tileentities.TelepadLogic;
+import jaredbgreat.combatmod.blocks.tileentities.TeletoyLogic;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -46,8 +51,11 @@ public class MF1Blocks {
 		GameRegistry.registerBlock(graniteSlab2, ItemBasicSlab.class, "granite_slab2", graniteSlab1, graniteSlab2);
 		
 		//Register telepads
-		GameRegistry.registerBlock(telepad, telepad.getUnlocalizedName());
-		GameRegistry.registerBlock(teletoy, teletoy.getUnlocalizedName());
+		GameRegistry.registerTileEntity(TeletoyLogic.class, "TeletoyLogic");
+		GameRegistry.registerTileEntity(TelepadLogic.class, "TelepadLogic");
+		GameRegistry.registerTileEntity(LandingpadLogic.class, "LandingpadLogic");
+		GameRegistry.registerBlock(telepad, TelepadItem.class, telepad.getUnlocalizedName());
+		GameRegistry.registerBlock(teletoy, TeletoyItem.class, teletoy.getUnlocalizedName());
 		GameRegistry.registerBlock(landingpad, landingpad.getUnlocalizedName());
 	}
 

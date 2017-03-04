@@ -2,6 +2,7 @@ package jaredbgreat.combatmod.recipes;
 
 import jaredbgreat.combatmod.blocks.MF1Blocks;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -85,15 +86,34 @@ public class BasicRecipes {
 				'S', new ItemStack(MF1Blocks.granite, 1, 3)
 			);
 		
-//		GameRegistry.addRecipe(new ItemStack(MF1Blocks.storageBlock, 1, 0),
-//				"SSS",
-//				"SSS",
-//				"SSS",
-//				'S', new ItemStack(GameRegistry.findItem("MineFantasy2"," sulfur"), 1, 0)
-//			);
-//				
-//		GameRegistry.addShapelessRecipe(new ItemStack(GameRegistry.findItem("MineFantasy2","sulfur"), 9, 1), 
-//				new ItemStack(MF1Blocks.storageBlock, 1, 0));
+		GameRegistry.addRecipe(new ItemStack(MF1Blocks.landingpad, 1, 0), 
+				"lil",
+				"iei",
+				"lil",
+				'i', Items.iron_ingot,
+				'e', Items.ender_eye,
+				'l', new ItemStack(Items.dye, 1, 4)
+			);
+		
+		GameRegistry.addRecipe(new ItemStack(MF1Blocks.teletoy, 1, 0), 
+				"rgr",
+				"geg",
+				"rgr",
+				'r', Items.redstone,
+				'g', Items.gold_ingot,
+				'e', Items.ender_eye
+			);
+		
+		GameRegistry.addRecipe(new ItemStack(MF1Blocks.telepad, 1, 0), 
+				"ege",
+				"rtr",
+				"ele",
+				'r', Items.redstone,
+				't', MF1Blocks.teletoy,
+				'e', Items.ender_eye,
+				'g', Blocks.gold_block,
+				'l', Blocks.lapis_block
+			);
 	}
 
 }

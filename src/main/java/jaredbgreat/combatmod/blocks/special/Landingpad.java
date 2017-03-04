@@ -8,7 +8,7 @@ public class Landingpad extends AbstractTelepad {
 
 	public Landingpad() {
 		super("tpad00a");
-		// TODO Auto-generated constructor stub
+		setLightLevel(0.75f);		
 	}
 
 	
