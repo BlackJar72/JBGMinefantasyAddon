@@ -1,8 +1,8 @@
-package jaredbgreat.combatmod.blocks.special;
+package jaredbgreat.combatmod.blocks.itemblock;
 
-import jaredbgreat.combatmod.Info;
 import jaredbgreat.combatmod.blocks.MF1Blocks;
-import jaredbgreat.combatmod.blocks.tileentities.TelepadLogic;
+import jaredbgreat.combatmod.blocks.special.AbstractTelepad;
+import jaredbgreat.combatmod.blocks.tileentities.TelepadBaseLogic;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBlock;
@@ -13,9 +13,9 @@ import net.minecraft.nbt.NBTTagString;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-public class TelepadItem extends ItemBlock {
+public abstract class AbstractTelepadItem extends ItemBlock {
 	
-	public TelepadItem(Block block) {
+	public AbstractTelepadItem(Block block) {
 		super(block);
 	}
 	
@@ -44,8 +44,8 @@ public class TelepadItem extends ItemBlock {
 		} else {
 			boolean out = super.placeBlockAt(stack, player, world, x, y, z, side, hitX, hitY, hitZ, metadata);
 			TileEntity te = world.getTileEntity(x, y, z);
-			if(te instanceof TelepadLogic) {
-				TelepadLogic logic = (TelepadLogic)te;
+			if(te instanceof TelepadBaseLogic) {
+				TelepadBaseLogic logic = (TelepadBaseLogic)te;
 				NBTTagCompound nbt = stack.getTagCompound();
 				if(nbt == null) {
 					return out;

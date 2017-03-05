@@ -11,12 +11,10 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
 public class TelepadLogic extends TelepadBaseLogic {
-	static final double RANGESQ = 32767d * 32767d;
 	
 	@Override
 	boolean inRange() {
-		return (((targetX - xCoord) * (targetX - xCoord)) 
-			 + ((targetZ - zCoord) * (targetZ - zCoord)) <= RANGESQ);
+		return true;
 	}
 	
 }

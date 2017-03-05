@@ -10,7 +10,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
 public class TeletoyLogic extends TelepadBaseLogic {
-	static final double RANGESQ = 16384d;
+	static final double RANGESQ = 65536d; // 256 (maximum range) squared
 	
 	boolean inRange() {
 		return (((targetX - xCoord) * (targetX - xCoord))  
