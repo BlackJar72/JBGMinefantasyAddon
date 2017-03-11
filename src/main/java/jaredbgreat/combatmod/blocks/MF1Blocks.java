@@ -11,6 +11,7 @@ import jaredbgreat.combatmod.blocks.special.Teletoy;
 import jaredbgreat.combatmod.blocks.tileentities.LandingpadLogic;
 import jaredbgreat.combatmod.blocks.tileentities.TelepadLogic;
 import jaredbgreat.combatmod.blocks.tileentities.TeletoyLogic;
+import jaredbgreat.combatmod.herbs.Herbs;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -57,6 +58,8 @@ public class MF1Blocks {
 		GameRegistry.registerBlock(telepad, TelepadItem.class, telepad.getUnlocalizedName());
 		GameRegistry.registerBlock(teletoy, TeletoyItem.class, teletoy.getUnlocalizedName());
 		GameRegistry.registerBlock(landingpad, landingpad.getUnlocalizedName());
+		
+		Herbs.InitPlants();
 	}
 
 }
