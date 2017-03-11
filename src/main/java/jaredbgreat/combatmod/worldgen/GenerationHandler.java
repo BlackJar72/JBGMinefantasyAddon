@@ -1,6 +1,7 @@
 package jaredbgreat.combatmod.worldgen;
 
 import jaredbgreat.combatmod.blocks.MF1Blocks;
+import jaredbgreat.combatmod.herbs.Herbs;
 
 import java.util.HashSet;
 import java.util.PriorityQueue;
@@ -21,17 +22,20 @@ public class GenerationHandler implements IWorldGenerator {
 	private WorldGenMinable graniteGen2;
 	private WorldGenMinable slateGen1;
 	private WorldGenMinable slateGen2;
+	private GenerateHerbs genHerbs;
 	
 	public GenerationHandler() {
 		graniteGen1 = new WorldGenMinable(MF1Blocks.granite, 64);
 		slateGen1   = new WorldGenMinable(MF1Blocks.slate,   64);
 		graniteGen2 = new WorldGenMinable(MF1Blocks.granite, 32);
 		slateGen2   = new WorldGenMinable(MF1Blocks.slate,   32);
+		genHerbs    = new GenerateHerbs();
 	}
 
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world,
 			IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
+		addHerbs(world, random, chunkX, chunkZ);
 		if(world.isRemote || world.provider.dimensionId == 1) {
 			return;
 		} else if(world.provider.dimensionId == -1) {
@@ -39,6 +43,18 @@ public class GenerationHandler implements IWorldGenerator {
 		} else {
 			normalGeneration(random, chunkX, chunkZ, world, chunkGenerator, chunkProvider);
 		}
+	}
+	
+	
+	private void addHerbs(World world, Random random, int chunkX, int chunkZ) {
+		if(random.nextInt(3) != 0) {
+			return;
+		} else for(int i = random.nextInt(2) + 1; i > 0; i--) {
+			int x = (chunkX * 16) + random.nextInt(16);
+			int z = (chunkZ * 16) + random.nextInt(16);
+			int y = world.getTopSolidOrLiquidBlock(x, z);
+			genHerbs.generate(world, random, x, y, z);
+		}		
 	}
 	
 	
