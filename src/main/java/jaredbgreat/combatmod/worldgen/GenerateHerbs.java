@@ -1,7 +1,8 @@
 package jaredbgreat.combatmod.worldgen;
 
-import static jaredbgreat.combatmod.herbs.Herbs.*;
 import jaredbgreat.combatmod.herbs.BlockHerb;
+import jaredbgreat.combatmod.herbs.EHerbs;
+import jaredbgreat.combatmod.herbs.Herbs;
 
 import java.util.Random;
 
@@ -33,10 +34,13 @@ public class GenerateHerbs extends WorldGenerator {
 	
 	
 	private BlockHerb getHerbType(BiomeGenBase biome, Random random) {
-		if(random.nextBoolean()) {
-			return ginseng;
-		} else {
-			return marshmallow;
+		switch (EHerbs.getAny(random)) { // Stand-in until biome specific selection
+			case GINSENG:
+				return Herbs.ginseng;
+			case MARSHMALLOW:
+				return Herbs.marshmallow;
+			default:
+				return Herbs.ginseng;
 		}
 	}
 	

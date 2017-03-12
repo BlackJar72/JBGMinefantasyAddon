@@ -38,24 +38,7 @@ public class MarshmallowPlant extends BlockHerb {
     public boolean onBlockActivated(World world, int x, int y, int z, 
     								EntityPlayer player, int side, 
     								float fx, float fy, float fz) {
-    	if(player.getEquipmentInSlot(0) != null) {
-    		return false;
-    	}
-		if(world.isRemote) {
-    		return true;
-    	} else {
-    		ItemStack root;
-    		if(world.getBlockMetadata(x, y, z) == 0) {
-    			root = new ItemStack(Herbs.marshmallowroot, world.rand.nextInt(3) + 1, 0);
-    		} else {
-    			root = new ItemStack(Herbs.marshmallowroot, 1, 0);
-    		}
-        	EntityItem roots = new EntityItem(world, x + 0.5, y + 0.5, z + 0.5, root);
-        	roots.delayBeforeCanPickup = 10;
-        	world.spawnEntityInWorld(roots);
-        	world.setBlockToAir(x, y, z);        	
-    		return true;
-    	}
+    	return this.beGathered(world, x, y, z, player, Herbs.marshmallowroot, null, true);
     }
     
     
@@ -75,15 +58,6 @@ public class MarshmallowPlant extends BlockHerb {
     		return icons[0];
     	} else {
     		return icons[meta];
-    	}
-    }
-    
-    
-    @Override
-    public void updateTick(World world, int x, int y, int z, Random random) {
-    	if((world.getBlockLightValue(x, y, z) >=9) && (world.getBlockMetadata(x, y, z) != 0) 
-    			&& (random.nextInt(16) == 0)) {
-    		world.setBlockMetadataWithNotify(x, y, z, 0, 2);
     	}
     }
 }
