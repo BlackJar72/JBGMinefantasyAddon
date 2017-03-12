@@ -12,15 +12,13 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
 
-public class GinsengItem extends ItemFood implements IPlantable {
+public class MarshmallowItem extends ItemFood implements IPlantable   {
 
-	public GinsengItem(int hunger, float saturation) {
+	public MarshmallowItem(int hunger, float saturation) {
 		super(hunger, saturation, false);
-        setPotionEffect("+0-1-2+3&4-4+13");
-        //setPotionEffect("+4-5+6-7"); // This doe not work
-        //setPotionEffect("+4"); // The netherwart value -- I *MAY* make a new, rarer herb for this!
-        setUnlocalizedName(Info.ID + "-ginsingroot");
-        this.setTextureName(Info.ID + ":Herb/ginseng");
+        setPotionEffect(PotionHelper.glowstoneEffect);
+        setUnlocalizedName(Info.ID + "-marshmallowroot");
+        this.setTextureName(Info.ID + ":Herb/marshmallow");
 	}
 
 	@Override
@@ -30,7 +28,7 @@ public class GinsengItem extends ItemFood implements IPlantable {
 
 	@Override
 	public Block getPlant(IBlockAccess world, int x, int y, int z) {
-		return Herbs.ginseng;
+		return Herbs.marshmallow;
 	}
 
 	@Override
@@ -45,7 +43,7 @@ public class GinsengItem extends ItemFood implements IPlantable {
 		Block target = world.getBlock(x, y, z);
 		if((target == Blocks.dirt) || (target == Blocks.grass) || (target == Blocks.farmland)) {
 			if(world.isAirBlock(x, y + 1, z)) {
-				world.setBlock(x, y + 1, z, Herbs.ginseng);
+				world.setBlock(x, y + 1, z, Herbs.marshmallow);
 				world.setBlockMetadataWithNotify(x, y + 1, z, 1, 2);
 				item.stackSize--;
 				return true;
@@ -53,5 +51,5 @@ public class GinsengItem extends ItemFood implements IPlantable {
 		}
 		return false;
 	}
-	
+
 }

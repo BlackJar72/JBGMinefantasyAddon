@@ -10,14 +10,18 @@ public class Herbs {
 	
 	//Blocks
 	public static final GinsengPlant ginseng = new GinsengPlant();
+	public static final MarshmallowPlant marshmallow = new MarshmallowPlant();
 	
 	//Items
-	public static final GinsengItem ginsengroot = new GinsengItem(2, 2f);
+	public static final GinsengItem ginsengroot = new GinsengItem(3, 2f);
+	public static final MarshmallowItem marshmallowroot = new MarshmallowItem(3, 2f);
 	
 	
 	public static void InitPlants() {
 		GameRegistry.registerBlock(ginseng, "ginseng");
-		GameRegistry.registerItem(ginsengroot, "Ginseng Root");
+		GameRegistry.registerItem(ginsengroot, "ginsengRoot");
+		GameRegistry.registerBlock(marshmallow, "marshmallow");
+		GameRegistry.registerItem(marshmallowroot, "marshmallowRoot");
 	}
 	
 	

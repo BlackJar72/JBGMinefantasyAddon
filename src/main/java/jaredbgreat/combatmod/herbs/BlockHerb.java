@@ -12,8 +12,7 @@ public abstract class BlockHerb extends BlockBush {
 		super(Material.plants);
 		setHardness(0.1f);
 		setStepSound(soundTypeGrass);
-		setResistance(0.1f);
-        setCreativeTab(CreativeTabs.tabBrewing);		
+		setResistance(0.1f);		
 	}
 	
 	
