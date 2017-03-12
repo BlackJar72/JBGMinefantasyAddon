@@ -2,6 +2,7 @@ package jaredbgreat.combatmod.herbs;
 
 import java.util.Random;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.item.EntityItem;
@@ -10,6 +11,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeGenBase;
 
 public abstract class BlockHerb extends BlockBush {
 
@@ -34,16 +36,15 @@ public abstract class BlockHerb extends BlockBush {
 	
 	
 	protected boolean beGathered(World world, int x, int y, int z, 
-			EntityPlayer player, Item drop, Item tool, boolean destroy) {
+			EntityPlayer player, Item drop, Item tool, int max, boolean destroy) {
 
 		if(world.isRemote) {
     		return true;
 		}
-    	if(((tool == null) && (player.getEquipmentInSlot(0) == null)) 
-    			|| (player.getEquipmentInSlot(0).getItem() == tool)) {
+    	if(isRightTool(player, tool)) {
     		ItemStack root;
     		if(world.getBlockMetadata(x, y, z) == 0) {
-    			root = new ItemStack(drop, world.rand.nextInt(3) + 1, 0);
+    			root = new ItemStack(drop, world.rand.nextInt(max) + 1, 0);
     		} else {
     			root = new ItemStack(drop, 1, 0);
     		}
@@ -60,6 +61,19 @@ public abstract class BlockHerb extends BlockBush {
     		return false;
     	}
     }
+	
+	
+	private boolean isRightTool(EntityPlayer player, Item tool) {
+		ItemStack stackHeld = player.getEquipmentInSlot(0);
+		if(stackHeld == null) {
+			return tool == null;
+		} else {
+			Item held = stackHeld.getItem();
+			return ((tool != null) 
+					&& (held != null) // Shouldn't ever be -- failsafe 
+					&&  tool.getClass().isAssignableFrom(held.getClass()));
+		}
+	}
     
     
     @Override
@@ -68,7 +82,11 @@ public abstract class BlockHerb extends BlockBush {
     			&& (random.nextInt(16) == 0)) {
     		world.setBlockMetadataWithNotify(x, y, z, 0, 2);
     	}
-    }
-	
+    }	
+    
+
+    abstract public boolean isRightSoil(Block ground);
+    abstract public int getSizeFactor();
+    abstract public boolean isGoodBiome(BiomeGenBase biome);
 	
 }

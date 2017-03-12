@@ -11,10 +11,14 @@ public class Herbs {
 	//Blocks
 	public static final GinsengPlant ginseng = new GinsengPlant();
 	public static final MarshmallowPlant marshmallow = new MarshmallowPlant();
+	public static final CamomilePlant camomile = new CamomilePlant();
+	public static final AloeVeraPlant aloevera = new AloeVeraPlant();
 	
 	//Items
 	public static final GinsengItem ginsengroot = new GinsengItem(3, 2f);
 	public static final MarshmallowItem marshmallowroot = new MarshmallowItem(3, 2f);
+	public static final CamomileItem camomileherb = new CamomileItem();
+	public static final AloeVeraItem aloe = new AloeVeraItem();
 	
 	
 	public static void InitPlants() {
@@ -22,12 +26,14 @@ public class Herbs {
 		GameRegistry.registerItem(ginsengroot, "ginsengRoot");
 		GameRegistry.registerBlock(marshmallow, "marshmallow");
 		GameRegistry.registerItem(marshmallowroot, "marshmallowRoot");
+		GameRegistry.registerBlock(camomile, "camomile");
+		GameRegistry.registerItem(camomileherb, "camomileHerb");
+		GameRegistry.registerBlock(aloevera, "aloevera");
+		GameRegistry.registerItem(aloe, "aloe");
 	}
 	
 	
-	public static void InitRecipes() {
-		
-	}
+	//public static void InitRecipes() {}
 	
 	
 	public static void generateHerbs(World world, Random random, int cx, int cy) {

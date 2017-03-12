@@ -17,7 +17,6 @@ import net.minecraftforge.common.BiomeDictionary;
 import cpw.mods.fml.common.IWorldGenerator;
 
 public class GenerationHandler implements IWorldGenerator {
-	//long ot = 0, at = 0, on = 0, an = 0, gt = 0, gn = 0;
 	private WorldGenMinable graniteGen1;
 	private WorldGenMinable graniteGen2;
 	private WorldGenMinable slateGen1;
@@ -47,7 +46,7 @@ public class GenerationHandler implements IWorldGenerator {
 	
 	
 	private void addHerbs(World world, Random random, int chunkX, int chunkZ) {
-		if(random.nextInt(3) != 0) {
+		if(random.nextInt(4) != 0) {
 			return;
 		} else for(int i = random.nextInt(2) + 1; i > 0; i--) {
 			int x = (chunkX * 16) + random.nextInt(16);
@@ -241,7 +240,7 @@ public class GenerationHandler implements IWorldGenerator {
 	/**
 	 * Turns the bottom of the world to black granite (the new bed-rock for low tier tools).
 	 * 
-	 * Its the results are good, but it lads the already laggy 1.7.10 too much, so not so good
+	 * Its the results are good, but it lags the already laggy 1.7.10 too much, so not so good
 	 * in actual use.
 	 * 
 	 * @param world
@@ -250,7 +249,6 @@ public class GenerationHandler implements IWorldGenerator {
 	 * @param random
 	 */
 	private void granitize(World world, int chunkX, int chunkZ, Random random) {
-//		long time = System.nanoTime();
 		int sx = chunkX * 16;
 		int sz = chunkZ * 16;
 		int sy;
@@ -262,11 +260,7 @@ public class GenerationHandler implements IWorldGenerator {
 						world.setBlock(i, k, j, MF1Blocks.granite, 0, 2);
 					}
 				}
-			}
-//		gt += (System.nanoTime() - time);
-//		gn++;
-//		System.out.println("Generate as GRANITIZER averaging " + (gt / (1000 * gn)) + " ms.");
-				
+			}				
 	}
 	
 	

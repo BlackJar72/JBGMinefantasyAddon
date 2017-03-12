@@ -1,16 +1,15 @@
 package jaredbgreat.combatmod.herbs;
 
 import jaredbgreat.combatmod.Info;
-
-import java.util.Random;
-
+import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.IIcon;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.BiomeDictionary.Type;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -39,7 +38,7 @@ public class GinsengPlant extends BlockHerb {
     public boolean onBlockActivated(World world, int x, int y, int z, 
     								EntityPlayer player, int side, 
     								float fx, float fy, float fz) {
-    	return this.beGathered(world, x, y, z, player, Herbs.ginsengroot, null, true);
+    	return this.beGathered(world, x, y, z, player, Herbs.ginsengroot, null, 3, true);
     }
     
     
@@ -62,12 +61,24 @@ public class GinsengPlant extends BlockHerb {
     	}
     }
     
+
+    @Override
+    public boolean isRightSoil(Block ground) {
+    	return ((ground == Blocks.dirt) || (ground == Blocks.grass));
+    }
+    
     
     @Override
-    public void updateTick(World world, int x, int y, int z, Random random) {
-    	if((world.getBlockLightValue(x, y, z) >=9) && (world.getBlockMetadata(x, y, z) != 0) 
-    			&& (random.nextInt(20) == 0)) {
-    		world.setBlockMetadataWithNotify(x, y, z, 0, 2);
-    	}
+    public int getSizeFactor() {
+    	return 3;
+    }
+    
+    
+    @Override
+    public boolean isGoodBiome(BiomeGenBase biome) {
+    	return ((biome.rainfall > 0.5f) && (biome.temperature > 0.2f) && (biome.temperature < 0.5))
+    				|| (BiomeDictionary.isBiomeOfType(biome, Type.FOREST)) 
+    				|| (BiomeDictionary.isBiomeOfType(biome, Type.DENSE))
+    				|| (BiomeDictionary.isBiomeOfType(biome, Type.CONIFEROUS));
     }
 }

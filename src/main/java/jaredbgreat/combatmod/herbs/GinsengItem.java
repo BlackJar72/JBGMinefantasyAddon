@@ -20,7 +20,7 @@ public class GinsengItem extends ItemFood implements IPlantable {
         //setPotionEffect("+4-5+6-7"); // This doe not work
         //setPotionEffect("+4"); // The netherwart value -- I *MAY* make a new, rarer herb for this!
         setUnlocalizedName(Info.ID + "-ginsingroot");
-        this.setTextureName(Info.ID + ":Herb/ginseng");
+        setTextureName(Info.ID + ":Herb/ginseng");
 	}
 
 	@Override

@@ -6,7 +6,9 @@ import java.util.Random;
 public enum EHerbs {
 	
 	GINSENG,
-	MARSHMALLOW;
+	MARSHMALLOW,
+	CAMOMILE,
+	ALOE;
 	
 	
 	public static final EnumSet universal = EnumSet.allOf(EHerbs.class);
