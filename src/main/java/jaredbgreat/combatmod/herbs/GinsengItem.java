@@ -16,9 +16,8 @@ public class GinsengItem extends ItemFood implements IPlantable {
 
 	public GinsengItem(int hunger, float saturation) {
 		super(hunger, saturation, false);
-        setPotionEffect("+0-1-2+3&4-4+13");
-        //setPotionEffect("+4-5+6-7"); // This doe not work
-        //setPotionEffect("+4"); // The netherwart value -- I *MAY* make a new, rarer herb for this!
+        //setPotionEffect("+0-1-2+3&4-4+13");
+        setPotionEffect("+4");
         setUnlocalizedName(Info.ID + "-ginsingroot");
         setTextureName(Info.ID + ":Herb/ginseng");
 	}

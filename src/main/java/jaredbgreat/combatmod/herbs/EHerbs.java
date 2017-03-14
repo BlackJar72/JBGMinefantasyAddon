@@ -8,7 +8,9 @@ public enum EHerbs {
 	GINSENG,
 	MARSHMALLOW,
 	CAMOMILE,
-	ALOE;
+	ALOE,
+	HORSETAIL,
+	COHOSH;
 	
 	
 	public static final EnumSet universal = EnumSet.allOf(EHerbs.class);

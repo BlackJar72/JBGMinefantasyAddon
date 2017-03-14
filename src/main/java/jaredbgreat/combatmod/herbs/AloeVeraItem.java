@@ -7,7 +7,7 @@ import net.minecraft.potion.PotionHelper;
 public class AloeVeraItem extends Item {
 
 	public AloeVeraItem() {
-        setPotionEffect(PotionHelper.ghastTearEffect);
+        setPotionEffect(PotionHelper.speckledMelonEffect);
         setUnlocalizedName(Info.ID + "-aloeVera");
         setTextureName(Info.ID + ":Herb/aloeVera");
 	}

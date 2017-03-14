@@ -7,7 +7,7 @@ import net.minecraft.potion.PotionHelper;
 public class CamomileItem extends Item {
 
 	public CamomileItem() {
-        setPotionEffect(PotionHelper.speckledMelonEffect);
+        setPotionEffect(PotionHelper.ghastTearEffect);
         setUnlocalizedName(Info.ID + "-camomile");
         setTextureName(Info.ID + ":Herb/camomile");
 	}

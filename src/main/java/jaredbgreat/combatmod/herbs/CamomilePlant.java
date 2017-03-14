@@ -12,7 +12,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 
 public class CamomilePlant extends BlockHerb {
-	private IIcon[] icons;
 
 	protected CamomilePlant() {
 		setBlockName(Info.ID + "-Camomile");
@@ -48,17 +47,6 @@ public class CamomilePlant extends BlockHerb {
     	icons[1] = ico.registerIcon(Info.ID + ":Herb/Camomile_harvested");
     }
     
-    
-    @Override
-    @SideOnly(Side.CLIENT)
-    public IIcon getIcon(int p1, int meta) {
-    	if(meta < 0 || meta >= 2) {
-    		return icons[0];
-    	} else {
-    		return icons[meta];
-    	}
-    }
-    
 
     @Override
     public boolean isRightSoil(Block ground) {
@@ -68,7 +56,7 @@ public class CamomilePlant extends BlockHerb {
     
     @Override
     public int getSizeFactor() {
-    	return 4;
+    	return 3;
     }
     
     

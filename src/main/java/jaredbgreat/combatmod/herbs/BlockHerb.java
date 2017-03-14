@@ -2,6 +2,8 @@ package jaredbgreat.combatmod.herbs;
 
 import java.util.Random;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.material.Material;
@@ -9,11 +11,13 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.IIcon;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 
 public abstract class BlockHerb extends BlockBush {
+	protected IIcon[] icons;
 
 	public BlockHerb() {
 		super(Material.plants);
@@ -83,6 +87,17 @@ public abstract class BlockHerb extends BlockBush {
     		world.setBlockMetadataWithNotify(x, y, z, 0, 2);
     	}
     }	
+    
+    
+    @Override
+    @SideOnly(Side.CLIENT)
+    public IIcon getIcon(int p1, int meta) {
+    	if(meta < 0 || meta >= 2) {
+    		return icons[0];
+    	} else {
+    		return icons[meta];
+    	}
+    }
     
 
     abstract public boolean isRightSoil(Block ground);

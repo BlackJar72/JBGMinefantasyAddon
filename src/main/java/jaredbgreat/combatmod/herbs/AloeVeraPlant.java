@@ -13,7 +13,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 
 public class AloeVeraPlant extends BlockHerb {
-	private IIcon[] icons;
 
 	protected AloeVeraPlant() {
 		setBlockName(Info.ID + "-AloeVera");
@@ -37,7 +36,7 @@ public class AloeVeraPlant extends BlockHerb {
     public boolean onBlockActivated(World world, int x, int y, int z, 
     								EntityPlayer player, int side, 
     								float fx, float fy, float fz) {
-    	return this.beGathered(world, x, y, z, player, Herbs.aloe, Items.shears, 1, true);
+    	return this.beGathered(world, x, y, z, player, Herbs.aloe, Items.shears, 1, false);
     }
     
     
@@ -47,17 +46,6 @@ public class AloeVeraPlant extends BlockHerb {
     	icons = new IIcon[2];
     	icons[0] = ico.registerIcon(Info.ID + ":Herb/AloeVera");
     	icons[1] = ico.registerIcon(Info.ID + ":Herb/AloeVera_harvested");
-    }
-    
-    
-    @Override
-    @SideOnly(Side.CLIENT)
-    public IIcon getIcon(int p1, int meta) {
-    	if(meta < 0 || meta >= 2) {
-    		return icons[0];
-    	} else {
-    		return icons[meta];
-    	}
     }	
     
     
@@ -76,7 +64,7 @@ public class AloeVeraPlant extends BlockHerb {
     
     @Override
     public int getSizeFactor() {
-    	return 2;
+    	return 4;
     }
     
     

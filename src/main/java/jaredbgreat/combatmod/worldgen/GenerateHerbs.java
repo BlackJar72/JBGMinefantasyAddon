@@ -47,6 +47,10 @@ public class GenerateHerbs extends WorldGenerator {
 				return Herbs.camomile;
 			case ALOE:
 				return Herbs.aloevera;
+			case HORSETAIL:
+				return Herbs.horsetail;
+			case COHOSH:
+				return Herbs.cohosh;
 			default:
 				return Herbs.ginseng;
 		}

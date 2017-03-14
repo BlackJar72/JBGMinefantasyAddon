@@ -13,12 +13,16 @@ public class Herbs {
 	public static final MarshmallowPlant marshmallow = new MarshmallowPlant();
 	public static final CamomilePlant camomile = new CamomilePlant();
 	public static final AloeVeraPlant aloevera = new AloeVeraPlant();
+	public static final HorsetailPlant horsetail = new HorsetailPlant();
+	public static final CohoshPlant cohosh = new CohoshPlant();
 	
 	//Items
 	public static final GinsengItem ginsengroot = new GinsengItem(3, 2f);
 	public static final MarshmallowItem marshmallowroot = new MarshmallowItem(3, 2f);
 	public static final CamomileItem camomileherb = new CamomileItem();
 	public static final AloeVeraItem aloe = new AloeVeraItem();
+	public static final HorsetailItem horsetailItem = new HorsetailItem();
+	public static final CohoshItem cohoshItem = new CohoshItem();
 	
 	
 	public static void InitPlants() {
@@ -30,32 +34,9 @@ public class Herbs {
 		GameRegistry.registerItem(camomileherb, "camomileHerb");
 		GameRegistry.registerBlock(aloevera, "aloevera");
 		GameRegistry.registerItem(aloe, "aloe");
-	}
-	
-	
-	//public static void InitRecipes() {}
-	
-	
-	public static void generateHerbs(World world, Random random, int cx, int cy) {
-		int bx = (cx * 16) + random.nextInt(16);
-		int by = (cy * 16) + random.nextInt(16);
-		int bz = world.getHeight() + 1;
-		
-		int x, y, z;
-		
-		BlockHerb type = ginseng; // TODO: Select herb
-		
-		int n = 3 + random.nextInt(6); // 3-8
-		
-		for(int i = 0; i <= n; i++) {
-			z = bz + random.nextInt(4) - random.nextInt(4);
-			x = bx + random.nextInt(5) - random.nextInt(5);
-			y = by + random.nextInt(5) - random.nextInt(5);
-			if(world.isAirBlock(x, y, z) 
-					&& ((world.getBlock(x, y - 1, z) == Blocks.dirt) 
-							|| (world.getBlock(x, y-1, z) == Blocks.grass))) {
-				world.setBlock(x, y, z, type);
-			}
-		}
+		GameRegistry.registerBlock(horsetail, "horsetail");
+		GameRegistry.registerItem(horsetailItem, "horsetailItem");
+		GameRegistry.registerBlock(cohosh, "cohosh");
+		GameRegistry.registerItem(cohoshItem, "cohoshItem");
 	}
 }

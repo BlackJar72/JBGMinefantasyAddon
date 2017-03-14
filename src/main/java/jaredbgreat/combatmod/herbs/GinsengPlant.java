@@ -14,7 +14,6 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class GinsengPlant extends BlockHerb {
-	private IIcon[] icons;
 
 	protected GinsengPlant() {
 		setBlockName(Info.ID + "-GinsengPlant");
@@ -50,17 +49,6 @@ public class GinsengPlant extends BlockHerb {
     	icons[1] = ico.registerIcon(Info.ID + ":Herb/Ginseng_harvested");
     }
     
-    
-    @Override
-    @SideOnly(Side.CLIENT)
-    public IIcon getIcon(int p1, int meta) {
-    	if(meta < 0 || meta >= 2) {
-    		return icons[0];
-    	} else {
-    		return icons[meta];
-    	}
-    }
-    
 
     @Override
     public boolean isRightSoil(Block ground) {
@@ -70,13 +58,13 @@ public class GinsengPlant extends BlockHerb {
     
     @Override
     public int getSizeFactor() {
-    	return 3;
+    	return 5;
     }
     
     
     @Override
     public boolean isGoodBiome(BiomeGenBase biome) {
-    	return ((biome.rainfall > 0.5f) && (biome.temperature > 0.2f) && (biome.temperature < 0.5))
+    	return ((biome.rainfall >= 0.5f) && (biome.temperature > 0.2f) && (biome.temperature <= 0.5))
     				|| (BiomeDictionary.isBiomeOfType(biome, Type.FOREST)) 
     				|| (BiomeDictionary.isBiomeOfType(biome, Type.DENSE))
     				|| (BiomeDictionary.isBiomeOfType(biome, Type.CONIFEROUS));
