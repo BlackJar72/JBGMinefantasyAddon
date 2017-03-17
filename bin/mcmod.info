@@ -1,7 +1,7 @@
 [
 {
-  "modid": "jbgnospawmattack",
-  "name": "No Spam Attack",
+  "modid": "JBGMineFantasyAddOn",
+  "name": "JBG's Minefantsy Add-On",
   "description": "Simplified 1.9-style spam-attack nerfing.",
   "version": "${version}",
   "mcversion": "${mcversion}",

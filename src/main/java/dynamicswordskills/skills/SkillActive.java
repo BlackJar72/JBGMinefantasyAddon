@@ -18,7 +18,7 @@
 package dynamicswordskills.skills;
 
 import static minefantasy.mf2.api.stamina.StaminaBar.modifyStaminaValue;
-import jaredbgreat.combatmod.ConfigHandler;
+import jaredbgreat.minefantasy.ConfigHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.entity.EntityLivingBase;

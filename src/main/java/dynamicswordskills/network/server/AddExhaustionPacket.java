@@ -18,7 +18,7 @@
 package dynamicswordskills.network.server;
 
 import static minefantasy.mf2.api.stamina.StaminaBar.modifyStaminaValue;
-import jaredbgreat.combatmod.ConfigHandler;
+import jaredbgreat.minefantasy.ConfigHandler;
 
 import java.io.IOException;
 

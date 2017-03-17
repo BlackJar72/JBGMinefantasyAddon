@@ -1,0 +1,39 @@
+tile.jbgminefantasyaddon-granite0.name=Granite
+tile.jbgminefantasyaddon-granite1.name=Granite Brick
+tile.jbgminefantasyaddon-granite2.name=Cracked Granite Brick
+tile.jbgminefantasyaddon-granite3.name=Mossy Granite Brick
+
+tile.jbgminefantasyaddon-slate0.name=Slate
+tile.jbgminefantasyaddon-slate1.name=Slate Tiles
+tile.jbgminefantasyaddon-slate2.name=Diagonal Slate Tiles
+tile.jbgminefantasyaddon-slate3.name=Slate Brick
+
+tile.jbgminefantasyaddon-slate-slab0.name=Slate Slab
+tile.jbgminefantasyaddon-slate-slab1.name=Slate Tile Slab 
+tile.jbgminefantasyaddon-slate-slab2.name=Diagonal Slate Tile Slab
+tile.jbgminefantasyaddon-slate-slab3.name=Slate Brick Slab
+
+tile.jbgminefantasyaddon-granite-slab0.name=Granite Slab
+tile.jbgminefantasyaddon-granite-slab1.name=Granite Brick Slab
+tile.jbgminefantasyaddon-granite-slab2.name=Cracked Granite Brick Slab
+tile.jbgminefantasyaddon-granite-slab3.name=Mossy Granite Brick Slab
+
+tile.jbgminefantasyaddon-storage0.name=Sulphur Block
+
+tile.jbgminefantasyaddon-tpad00a.name=Teleport Landing
+tile.jbgminefantasyaddon-tpad01a.name=Long Range Teleporter
+tile.jbgminefantasyaddon-tpad02a.name=Short Range Teleporter
+
+tile.jbgminefantasyaddon-AloeVera.name=Aloe Vera
+tile.jbgminefantasyaddon-MarshmallowPlant.name=Marsh Mallow
+tile.jbgminefantasyaddon-GinsengPlant.name=Ginseng
+tile.jbgminefantasyaddon-Camomile.name=Camomile
+tile.jbgminefantasyaddon-Horsetail.name=Horsetail
+tile.jbgminefantasyaddon-Cohosh.name=Cohosh
+
+item.jbgminefantasyaddon-aloeVera.name=Aloe Vera
+item.jbgminefantasyaddon-marshmallowroot.name=Marsh Mallow Root
+item.jbgminefantasyaddon-ginsingroot.name=Ginseng Root
+item.jbgminefantasyaddon-camomile.name=Camomile
+item.jbgminefantasyaddon-horsetail.name=Horsetail
+item.jbgminefantasyaddon-cohosh.name=Cohosh
