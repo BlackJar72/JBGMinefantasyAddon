@@ -20,8 +20,8 @@ Code under jaredbgreat.minefantasy is the creation of Jared Blackburn, and is hi
 code is the property of other authors as listen in those source files.
 
 While I prefer the more permissive Creative Commons lisence for most things, this does not use it, due to require 
-code from GPL'ed mods.  Therefore this is under the Gnu General Public Lisence version 2.0 (GPL 2.0):
+code from GPL'ed mods.  Therefore this is under the Gnu General Public Lisence version 3.0 (GPL 3.0):
 
-https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+https://www.gnu.org/licenses/old-licenses/gpl-3.0.en.html
 
 
