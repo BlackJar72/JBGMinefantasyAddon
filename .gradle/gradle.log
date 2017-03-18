@@ -10,7 +10,7 @@
 :apiClasses UP-TO-DATE
 :sourceMainJava
 :compileJavawarning: [options] bootstrap class path not set in conjunction with -source 1.6
-Note: /home/jared/Documents/src/eclipse/MC1.7.10/CombatMod/build/sources/java/jaredbgreat/combatmod/worldgen/GenerationHandler.java uses unchecked or unsafe operations.
+Note: Some input files use unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
 1 warning
 
@@ -23,7 +23,7 @@ Note: Recompile with -Xlint:unchecked for details.
 :test UP-TO-DATE
 :extractMcpData UP-TO-DATE
 :getVersionJson
-:extractUserDev
+:extractUserDev UP-TO-DATE
 :genSrgs SKIPPED
 :reobf
 :assemble
@@ -32,4 +32,4 @@ Note: Recompile with -Xlint:unchecked for details.
 
 BUILD SUCCESSFUL
 
-Total time: 22.703 secs
+Total time: 8.538 secs
