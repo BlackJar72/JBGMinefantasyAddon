@@ -78,7 +78,7 @@ public class MarshmallowPlant extends BlockHerb {
     protected void checkAndDropBlock(World world, int x, int y, int z)
     {
         if (!canBlockStay(world, x, y, z)) {
-        	dropItem(world, x, y, z, Herbs.ginsengroot, null, 3, true);
+        	dropItem(world, x, y, z, Herbs.marshmallowroot, null, 3, true);
         }
     }
 }

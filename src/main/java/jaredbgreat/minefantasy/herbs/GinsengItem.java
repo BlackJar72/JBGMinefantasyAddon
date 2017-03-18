@@ -13,14 +13,10 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
 
-public class GinsengItem extends ItemFood implements IPlantable {
+public class GinsengItem extends ItemHerb implements IPlantable {
 
 	public GinsengItem(int hunger, float saturation) {
-		super(hunger, saturation, false);
-        setPotionEffect("+4");
-        setUnlocalizedName(Info.ID + "-ginsingroot");
-        setTextureName(Info.ID + ":Herb/ginseng");
-        setCreativeTab(CreativeTabs.tabBrewing);
+		super(EHerbs.GINSENG);
 	}
 
 	@Override

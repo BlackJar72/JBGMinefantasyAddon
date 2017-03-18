@@ -19,10 +19,10 @@ public class Herbs {
 	//Items
 	public static final GinsengItem ginsengroot = new GinsengItem(3, 2f);
 	public static final MarshmallowItem marshmallowroot = new MarshmallowItem(3, 2f);
-	public static final CamomileItem camomileherb = new CamomileItem();
-	public static final AloeVeraItem aloe = new AloeVeraItem();
-	public static final HorsetailItem horsetailItem = new HorsetailItem();
-	public static final CohoshItem cohoshItem = new CohoshItem();
+	public static final ItemHerb camomileherb = new ItemHerb(EHerbs.CAMOMILE);
+	public static final ItemHerb aloe = new ItemHerb(EHerbs.ALOE);
+	public static final ItemHerb horsetailItem = new ItemHerb(EHerbs.HORSETAIL);
+	public static final ItemHerb cohoshItem = new ItemHerb(EHerbs.COHOSH);
 	
 	
 	public static void InitPlants() {

@@ -13,14 +13,10 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
 
-public class MarshmallowItem extends ItemFood implements IPlantable   {
+public class MarshmallowItem extends ItemHerb implements IPlantable   {
 
 	public MarshmallowItem(int hunger, float saturation) {
-		super(hunger, saturation, false);
-        setPotionEffect(PotionHelper.glowstoneEffect);
-        setUnlocalizedName(Info.ID + "-marshmallowroot");
-        setTextureName(Info.ID + ":Herb/marshmallow");
-        setCreativeTab(CreativeTabs.tabBrewing);
+		super(EHerbs.MARSHMALLOW);
 	}
 
 	@Override

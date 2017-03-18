@@ -19,7 +19,7 @@ public final class Info {
 
 	public static final String ID = "jbgminefantasyaddon";
 	public static final String NAME = "JBG's Minefantasy Add-On";
-	public static final String VERSION = "0.2.2";
+	public static final String VERSION = "0.2.3";
 	public static final String MINECRAFT = "1.7.10";
 	public static final String CHANNEL =  ID;
 	
