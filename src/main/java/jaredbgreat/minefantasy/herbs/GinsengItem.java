@@ -15,7 +15,7 @@ import net.minecraftforge.common.IPlantable;
 
 public class GinsengItem extends ItemHerb implements IPlantable {
 
-	public GinsengItem(int hunger, float saturation) {
+	public GinsengItem() {
 		super(EHerbs.GINSENG);
 	}
 

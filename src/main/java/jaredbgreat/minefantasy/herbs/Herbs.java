@@ -17,8 +17,8 @@ public class Herbs {
 	public static final CohoshPlant cohosh = new CohoshPlant();
 	
 	//Items
-	public static final GinsengItem ginsengroot = new GinsengItem(3, 2f);
-	public static final MarshmallowItem marshmallowroot = new MarshmallowItem(3, 2f);
+	public static final GinsengItem ginsengroot = new GinsengItem();
+	public static final MarshmallowItem marshmallowroot = new MarshmallowItem();
 	public static final ItemHerb camomileherb = new ItemHerb(EHerbs.CAMOMILE);
 	public static final ItemHerb aloe = new ItemHerb(EHerbs.ALOE);
 	public static final ItemHerb horsetailItem = new ItemHerb(EHerbs.HORSETAIL);

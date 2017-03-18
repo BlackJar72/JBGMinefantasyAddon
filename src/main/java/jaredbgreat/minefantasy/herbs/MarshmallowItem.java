@@ -15,7 +15,7 @@ import net.minecraftforge.common.IPlantable;
 
 public class MarshmallowItem extends ItemHerb implements IPlantable   {
 
-	public MarshmallowItem(int hunger, float saturation) {
+	public MarshmallowItem() {
 		super(EHerbs.MARSHMALLOW);
 	}
 

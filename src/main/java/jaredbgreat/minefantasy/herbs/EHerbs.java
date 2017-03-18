@@ -12,10 +12,10 @@ public enum EHerbs {
 	// would be bad in some environments, but Minecraft and
 	// Forge have to be loaded for this to load.
 	MARSHMALLOW (3, 3, PotionHelper.glowstoneEffect),
-	CAMOMILE (0, 0, PotionHelper.ghastTearEffect),
-	ALOE (0, 0, PotionHelper.speckledMelonEffect),
-	HORSETAIL (0, 0, PotionHelper.magmaCreamEffect),
-	COHOSH (0, 0, PotionHelper.blazePowderEffect);
+	CAMOMILE (0, 1, PotionHelper.ghastTearEffect),
+	ALOE (1, 0, PotionHelper.speckledMelonEffect),
+	HORSETAIL (1, 0, PotionHelper.magmaCreamEffect),
+	COHOSH (1, 0, PotionHelper.blazePowderEffect);
 	
 	public final int hunger;
 	public final float saturation;
