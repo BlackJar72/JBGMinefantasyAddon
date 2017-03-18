@@ -22,7 +22,7 @@ code is the property of other authors as listen in those source files.
 While I prefer the more permissive Creative Commons lisence for most things, this does not use it, due to require 
 code from GPL'ed mods.  Therefore the code is under the Gnu General Public Lisence version 3.0 (GPL 3.0):
 
-https://www.gnu.org/licenses/old-licenses/gpl-3.0.en.html
+https://www.gnu.org/licenses/gpl-3.0.en.html
 
 (I have not yet looked into how this effects assests; I may have to modify that to fit the borrowed assets.)
 
