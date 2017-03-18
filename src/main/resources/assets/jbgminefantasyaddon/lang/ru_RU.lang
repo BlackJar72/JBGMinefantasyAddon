@@ -1,0 +1,41 @@
+#Russian translation by Sirse
+
+tile.jbgminefantasyaddon-granite0.name=Гранит
+tile.jbgminefantasyaddon-granite1.name=Гранитные кирпичи
+tile.jbgminefantasyaddon-granite2.name=Потресканные гранитные кирпичи
+tile.jbgminefantasyaddon-granite3.name=Замшелые гранитные кирпичи
+
+tile.jbgminefantasyaddon-slate0.name=Сланец
+tile.jbgminefantasyaddon-slate1.name=Сланцевая плитка
+tile.jbgminefantasyaddon-slate2.name=Узорная сланцевая плитка
+tile.jbgminefantasyaddon-slate3.name=Сланцевые кирпичи
+
+tile.jbgminefantasyaddon-slate-slab0.name=Сланцевая плита
+tile.jbgminefantasyaddon-slate-slab1.name=Плита из сланцевой плитки
+tile.jbgminefantasyaddon-slate-slab2.name=Плита из узорной сланцевой плитки
+tile.jbgminefantasyaddon-slate-slab3.name=Плита из сланцевых кирпичей
+
+tile.jbgminefantasyaddon-granite-slab0.name=Гранитная плита
+tile.jbgminefantasyaddon-granite-slab1.name=Плита из гранитных кирпичей
+tile.jbgminefantasyaddon-granite-slab2.name=Плита из потресканных гранитных кирпичей
+tile.jbgminefantasyaddon-granite-slab3.name=Плита из замшеных гранитных кирпичей
+
+tile.jbgminefantasyaddon-storage0.name=Серный блок
+
+tile.jbgminefantasyaddon-tpad00a.name=Площадка телепорта
+tile.jbgminefantasyaddon-tpad01a.name=Телепорт
+tile.jbgminefantasyaddon-tpad02a.name=Улучшенный телепорт
+
+tile.jbgminefantasyaddon-AloeVera.name=Алоэ вера
+tile.jbgminefantasyaddon-MarshmallowPlant.name=Алтей аптечный
+tile.jbgminefantasyaddon-GinsengPlant.name=Женьшень
+tile.jbgminefantasyaddon-Camomile.name=Ромашка
+tile.jbgminefantasyaddon-Horsetail.name=Хвощ полевой
+tile.jbgminefantasyaddon-Cohosh.name=Клопогон кистевидный
+
+item.jbgminefantasyaddon-aloeVera.name=Алоэ вера
+item.jbgminefantasyaddon-marshmallowroot.name=Корень алтея
+item.jbgminefantasyaddon-ginsingroot.name=Корень женьшеня
+item.jbgminefantasyaddon-camomile.name=Ромашка
+item.jbgminefantasyaddon-horsetail.name=Хвоще полевой
+item.jbgminefantasyaddon-cohosh.name=Клопогон кистевидный

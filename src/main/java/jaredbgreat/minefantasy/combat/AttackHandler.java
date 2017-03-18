@@ -47,8 +47,8 @@ public class AttackHandler {
 	@SubscribeEvent
 	public void onDamageTaken(LivingHurtEvent event) {
 		DamageSource source = event.source;
-		if(event.source instanceof EntityDamageSource) {
-			Entity attacker = ((EntityDamageSource)event.source).getEntity();
+		if(source instanceof EntityDamageSource) {
+			Entity attacker = ((EntityDamageSource)source).getEntity();
 			if(attacker instanceof EntityPlayer) {
 				//System.out.print(event.ammount + " became ");
 				PlayerData logic = (PlayerData)attacker.getExtendedProperties(PlayerData.COMPOUND);
