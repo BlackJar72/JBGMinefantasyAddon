@@ -40,11 +40,11 @@ public class ConfigHandler {
 				"Determines how frequently herbs arpper; "
 				+ "up to one in HerbRarity chunks may generate herbs.");
 		
-		includeTPs = config.getBoolean("AllowTelepads", "Teleportation", true, 
+		includeTPs = config.getBoolean("TelepadsExist", "Teleportation", true, 
 				"Determines if telepads (including teleport landing pads) exist");
 		
 		if(includeTPs) {
-			craftTPs = config.getBoolean("AllowTelepads", "Teleportation", true,
+			craftTPs = config.getBoolean("TelepadsCraftable", "Teleportation", true,
 				"Determines if telepads (including teleport landing pads) can be crafted");
 		} else {
 			craftTPs = false;
