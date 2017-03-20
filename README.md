@@ -13,7 +13,7 @@ which will also be available in single player.  These portals may be spun-off in
 playing with MineFantasy, and have a Doom inspired pentagram aesthetic since they were first dreamed up for a 
 Doomlike Dungeons expansion.
 
-Other than the telepads, all assets were created by Anonymous Productions or Erurion (I think? For the tan clay 
+Other than the telepads and storage blocks, all assets were created by Anonymous Productions or Erurion (I think? For the tan clay 
 walls) and were borrowed from MineFantasy I.
 
 Code under jaredbgreat.minefantasy is the creation of Jared Blackburn, and is his intellectual property.  Other 
