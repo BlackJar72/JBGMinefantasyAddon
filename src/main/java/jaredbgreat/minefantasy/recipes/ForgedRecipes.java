@@ -1,5 +1,6 @@
 package jaredbgreat.minefantasy.recipes;
 
+import jaredbgreat.minefantasy.ConfigHandler;
 import jaredbgreat.minefantasy.blocks.AddonBlocks;
 import minefantasy.mf2.api.MineFantasyAPI;
 import minefantasy.mf2.api.crafting.Salvage;
@@ -20,6 +21,16 @@ public class ForgedRecipes {
 	private static final ItemStack llapis = new ItemStack(Items.dye, 1, 4);
 	
 	public static void register() {
+		if(ConfigHandler.includeTPs) {
+			addTelepads();
+		}
+	}
+	
+	
+	private static void addTelepads() {
+		// These will exist in creative mode either way, so they could be
+		// used by server admins, map-makers, etc., for public use.
+		// This allows them to be crafted by players.		
 		
 		MineFantasyAPI.addAnvilRecipe(artisanry, new ItemStack(AddonBlocks.landingpad), "smeltSteel", false, "hammer", -1, -1, 1000, new Object[]
 				{
@@ -34,7 +45,6 @@ public class ForgedRecipes {
 		
 		MineFantasyAPI.addAnvilRecipe(artisanry, new ItemStack(AddonBlocks.teletoy), "smeltSteel", false, "hammer", -1, -1, 1000, new Object[]
 				{
-
 					"rgr",
 					"geg",
 					"rgr",

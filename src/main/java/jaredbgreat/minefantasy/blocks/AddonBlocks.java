@@ -58,8 +58,6 @@ public class AddonBlocks {
 		GameRegistry.registerBlock(telepad, TelepadItem.class, telepad.getUnlocalizedName());
 		GameRegistry.registerBlock(teletoy, TeletoyItem.class, teletoy.getUnlocalizedName());
 		GameRegistry.registerBlock(landingpad, landingpad.getUnlocalizedName());
-		
-		Herbs.InitPlants();
 	}
 
 }

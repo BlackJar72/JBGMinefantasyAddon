@@ -1,5 +1,6 @@
 package jaredbgreat.minefantasy.worldgen;
 
+import jaredbgreat.minefantasy.ConfigHandler;
 import jaredbgreat.minefantasy.blocks.AddonBlocks;
 
 import java.util.HashSet;
@@ -33,7 +34,9 @@ public class GenerationHandler implements IWorldGenerator {
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world,
 			IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
-		addHerbs(world, random, chunkX, chunkZ);
+		if(ConfigHandler.includeHerbs) {
+			addHerbs(world, random, chunkX, chunkZ);
+		}
 		if(world.isRemote || world.provider.dimensionId == 1) {
 			return;
 		} else if(world.provider.dimensionId == -1) {
@@ -45,13 +48,14 @@ public class GenerationHandler implements IWorldGenerator {
 	
 	
 	private void addHerbs(World world, Random random, int chunkX, int chunkZ) {
-		if(random.nextInt(4) != 0) {
-			return;
-		} else for(int i = random.nextInt(2) + 1; i > 0; i--) {
-			int x = (chunkX * 16) + random.nextInt(16);
-			int z = (chunkZ * 16) + random.nextInt(16);
-			int y = world.getTopSolidOrLiquidBlock(x, z);
-			genHerbs.generate(world, random, x, y, z);
+		if((ConfigHandler.herbRarity < 2) 
+				|| random.nextInt(ConfigHandler.herbRarity) == 0) { 
+			for(int i = random.nextInt(2) + 1; i > 0; i--) {
+				int x = (chunkX * 16) + random.nextInt(16);
+				int z = (chunkZ * 16) + random.nextInt(16);
+				int y = world.getTopSolidOrLiquidBlock(x, z);
+				genHerbs.generate(world, random, x, y, z);
+			}
 		}		
 	}
 	
@@ -62,14 +66,17 @@ public class GenerationHandler implements IWorldGenerator {
 	private void normalGeneration(Random random, int chunkX, int chunkZ, World world,
 			IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
 		
-		if(random.nextInt(8) == 0) {
+		if(ConfigHandler.includeSlate && (random.nextInt(8) == 0)) {
 			addSlate(world, 2, 64, 0, 4, chunkX, chunkZ, random);
 		}
-		if(BiomeDictionary.isBiomeOfType(world.getBiomeGenForCoords((16 * chunkX + 8), (16 * chunkZ + 8)), BiomeDictionary.Type.MOUNTAIN) ||
-				BiomeDictionary.isBiomeOfType(world.getBiomeGenForCoords((16 * chunkX + 8), (16 * chunkZ + 8)), BiomeDictionary.Type.HILLS)) {
+		if(ConfigHandler.includeGranite 
+				&& BiomeDictionary.isBiomeOfType(world.getBiomeGenForCoords((16 * chunkX + 8), (16 * chunkZ + 8)), 
+						BiomeDictionary.Type.MOUNTAIN) 
+						|| BiomeDictionary.isBiomeOfType(world.getBiomeGenForCoords((16 * chunkX + 8), (16 * chunkZ + 8)), 
+								BiomeDictionary.Type.HILLS)) {
 			addGranite(world, 2, 96, true, 1, 1, chunkX, chunkZ, random);
 			addGranite(world, 2, 64, false, 1, 8, chunkX, chunkZ, random);
-		} else if (random.nextInt(16) == 0) {
+		} else if (ConfigHandler.includeGranite && (random.nextInt(16) == 0)) {
 			addGranite(world, 2, 64, true, 1, 1, chunkX, chunkZ, random);
 		}
 	}

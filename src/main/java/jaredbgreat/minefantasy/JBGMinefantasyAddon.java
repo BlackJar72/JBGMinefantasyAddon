@@ -14,9 +14,12 @@ package jaredbgreat.minefantasy;
  * https://creativecommons.org/licenses/by/4.0/legalcode
 */
 
+import java.io.File;
+
 import jaredbgreat.minefantasy.blocks.AddonBlocks;
 import jaredbgreat.minefantasy.combat.AttackHandler;
 import jaredbgreat.minefantasy.combat.PlayerHandler;
+import jaredbgreat.minefantasy.herbs.Herbs;
 import jaredbgreat.minefantasy.recipes.BasicRecipes;
 import jaredbgreat.minefantasy.recipes.CarpenterRecipes;
 import jaredbgreat.minefantasy.recipes.ForgedRecipes;
@@ -52,6 +55,8 @@ public class JBGMinefantasyAddon {
     
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+    	ConfigHandler.findConfigDir(event.getModConfigurationDirectory());
+    	ConfigHandler.init();
     	game = Minecraft.getMinecraft();
     	players = PlayerHandler.getPlayerHandler();
     	attackHandler = AttackHandler.getAttackHandler();
@@ -75,6 +80,9 @@ public class JBGMinefantasyAddon {
     
     private void BlockInit() {
 		AddonBlocks.register();
+		if(ConfigHandler.includeHerbs) {
+			Herbs.InitPlants();
+		}
 		generationHandler = new GenerationHandler();
 		GameRegistry.registerWorldGenerator(generationHandler, 64);
 		BasicRecipes.register();
