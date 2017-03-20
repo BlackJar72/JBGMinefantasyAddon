@@ -87,6 +87,7 @@ public class BasicRecipes {
 				'S', new ItemStack(AddonBlocks.granite, 1, 3)
 			);
 		
+		// Recipes for storage blocks
 		GameRegistry.addRecipe(new ItemStack(AddonBlocks.storage, 1, 0), 
 				"sss",
 				"sss",
@@ -116,35 +117,6 @@ public class BasicRecipes {
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(ComponentListMF.nitre, 9, 0), 
 										new ItemStack(AddonBlocks.storage, 1, 1));
-		
-		GameRegistry.addRecipe(new ItemStack(AddonBlocks.landingpad, 1, 0), 
-				"lil",
-				"iei",
-				"lil",
-				'i', Items.iron_ingot,
-				'e', Items.ender_eye,
-				'l', new ItemStack(Items.dye, 1, 4)
-			);
-		
-		GameRegistry.addRecipe(new ItemStack(AddonBlocks.teletoy, 1, 0), 
-				"rgr",
-				"geg",
-				"rgr",
-				'r', Items.redstone,
-				'g', Items.gold_ingot,
-				'e', Items.ender_eye
-			);
-		
-		GameRegistry.addRecipe(new ItemStack(AddonBlocks.telepad, 1, 0), 
-				"ege",
-				"rtr",
-				"ele",
-				'r', Items.redstone,
-				't', AddonBlocks.teletoy,
-				'e', Items.ender_eye,
-				'g', Blocks.gold_block,
-				'l', Blocks.lapis_block
-			);
 	}
 
 }

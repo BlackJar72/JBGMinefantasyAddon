@@ -18,6 +18,8 @@ import jaredbgreat.minefantasy.blocks.AddonBlocks;
 import jaredbgreat.minefantasy.combat.AttackHandler;
 import jaredbgreat.minefantasy.combat.PlayerHandler;
 import jaredbgreat.minefantasy.recipes.BasicRecipes;
+import jaredbgreat.minefantasy.recipes.CarpenterRecipes;
+import jaredbgreat.minefantasy.recipes.ForgedRecipes;
 import jaredbgreat.minefantasy.worldgen.GenerationHandler;
 import net.minecraft.client.Minecraft;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -59,7 +61,8 @@ public class JBGMinefantasyAddon {
 
     
     @EventHandler 
-    public void init(FMLInitializationEvent event) {}
+    public void init(FMLInitializationEvent event) {
+    }
     
     
     @EventHandler
@@ -75,5 +78,7 @@ public class JBGMinefantasyAddon {
 		generationHandler = new GenerationHandler();
 		GameRegistry.registerWorldGenerator(generationHandler, 64);
 		BasicRecipes.register();
+		CarpenterRecipes.register();
+		ForgedRecipes.register();
 	}
 }
