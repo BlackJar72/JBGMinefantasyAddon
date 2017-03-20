@@ -34,9 +34,6 @@ public class GenerationHandler implements IWorldGenerator {
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world,
 			IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
-		if(ConfigHandler.includeHerbs) {
-			addHerbs(world, random, chunkX, chunkZ);
-		}
 		if(world.isRemote || world.provider.dimensionId == 1) {
 			return;
 		} else if(world.provider.dimensionId == -1) {
@@ -65,6 +62,10 @@ public class GenerationHandler implements IWorldGenerator {
 	 */
 	private void normalGeneration(Random random, int chunkX, int chunkZ, World world,
 			IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
+		
+		if(ConfigHandler.includeHerbs) {
+			addHerbs(world, random, chunkX, chunkZ);
+		}
 		
 		if(ConfigHandler.includeSlate && (random.nextInt(8) == 0)) {
 			addSlate(world, 2, 64, 0, 4, chunkX, chunkZ, random);

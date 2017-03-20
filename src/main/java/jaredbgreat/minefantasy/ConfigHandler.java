@@ -14,6 +14,7 @@ public class ConfigHandler {
 	
 	public static boolean includeHerbs = true;
 	public static boolean includeTPs = true;
+	public static boolean craftTPs = true;
 	public static boolean includeNoSpamAttack = true;
 	public static boolean includeSlate = true;
 	public static boolean includeGranite = true;
@@ -39,16 +40,23 @@ public class ConfigHandler {
 				"Determines how frequently herbs arpper; "
 				+ "up to one in HerbRarity chunks may generate herbs.");
 		
-		includeTPs = config.getBoolean("AllowTelepads", "General", true, 
-				"Determines if telepads (including teleport landing pads) can be crafted");
+		includeTPs = config.getBoolean("AllowTelepads", "Teleportation", true, 
+				"Determines if telepads (including teleport landing pads) exist");
 		
-		includeSlate = config.getBoolean("IncludeSlate", "General", true, 
+		if(includeTPs) {
+			craftTPs = config.getBoolean("AllowTelepads", "Teleportation", true,
+				"Determines if telepads (including teleport landing pads) can be crafted");
+		} else {
+			craftTPs = false;
+		}
+				
+		includeSlate = config.getBoolean("IncludeSlate", "WorldGen", true, 
 				"Determines if slate will be added during world generation");
 		
-		includeGranite = config.getBoolean("IncludeGranite", "General", true, 
+		includeGranite = config.getBoolean("IncludeGranite", "WorldGen", true, 
 				"Determines if granite will be added during world generation");
 		
-		int ttr = config.getInt("TeletoyRange", "General", 256, 0, Integer.MAX_VALUE, 
+		int ttr = config.getInt("TeletoyRange", "Teleportation", 256, 0, Integer.MAX_VALUE, 
 				"The maximum range of a short range teleporter.");
 		TeletoyLogic.setMaxRange(ttr);
 		

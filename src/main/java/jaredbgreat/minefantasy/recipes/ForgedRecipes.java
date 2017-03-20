@@ -21,7 +21,7 @@ public class ForgedRecipes {
 	private static final ItemStack llapis = new ItemStack(Items.dye, 1, 4);
 	
 	public static void register() {
-		if(ConfigHandler.includeTPs) {
+		if(ConfigHandler.craftTPs) {
 			addTelepads();
 		}
 	}

@@ -1,6 +1,7 @@
 package jaredbgreat.minefantasy.blocks;
 
 import static net.minecraft.block.Block.soundTypeStone;
+import jaredbgreat.minefantasy.ConfigHandler;
 import jaredbgreat.minefantasy.blocks.itemblock.ItemBasicSlab;
 import jaredbgreat.minefantasy.blocks.itemblock.ItemBlockMF1;
 import jaredbgreat.minefantasy.blocks.itemblock.TelepadItem;
@@ -52,12 +53,14 @@ public class AddonBlocks {
 		GameRegistry.registerBlock(graniteSlab2, ItemBasicSlab.class, "granite_slab2", graniteSlab1, graniteSlab2);
 		
 		//Register telepads
-		GameRegistry.registerTileEntity(TeletoyLogic.class, "TeletoyLogic");
-		GameRegistry.registerTileEntity(TelepadLogic.class, "TelepadLogic");
-		GameRegistry.registerTileEntity(LandingpadLogic.class, "LandingpadLogic");
-		GameRegistry.registerBlock(telepad, TelepadItem.class, telepad.getUnlocalizedName());
-		GameRegistry.registerBlock(teletoy, TeletoyItem.class, teletoy.getUnlocalizedName());
-		GameRegistry.registerBlock(landingpad, landingpad.getUnlocalizedName());
+		if(ConfigHandler.includeTPs) {
+			GameRegistry.registerTileEntity(TeletoyLogic.class, "TeletoyLogic");
+			GameRegistry.registerTileEntity(TelepadLogic.class, "TelepadLogic");
+			GameRegistry.registerTileEntity(LandingpadLogic.class, "LandingpadLogic");
+			GameRegistry.registerBlock(telepad, TelepadItem.class, telepad.getUnlocalizedName());
+			GameRegistry.registerBlock(teletoy, TeletoyItem.class, teletoy.getUnlocalizedName());
+			GameRegistry.registerBlock(landingpad, landingpad.getUnlocalizedName());
+		}
 	}
 
 }
