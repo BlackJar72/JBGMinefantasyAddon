@@ -21,7 +21,7 @@ public class AddonBlocks {
 	
 	public static Block slate = new BasicMetaBlock("slate", Material.rock, 4, 2.2f, 6.0f, soundTypeStone);
 	public static Block granite = new BasicMetaBlock("granite", Material.rock, 4, 5.0f, 18.0f, soundTypeStone);	
-	//public static Block storageBlock = new BasicMetaBlock("storage", Material.rock, 1, 0.7f, 1.0f, soundTypeStone);
+	public static Block storage = new BasicMetaBlock("storage", Material.rock, 3, 0.7f, 1.0f, soundTypeStone);
 	
 	
 	public static Block slateSlab1 = new BasicSlab("slate", false, Material.rock, 4, 2.2f, 6.0f, soundTypeStone);
@@ -43,7 +43,7 @@ public class AddonBlocks {
 		//Registering meta-blocks
 		GameRegistry.registerBlock(slate, ItemBlockMF1.class, "slate");
 		GameRegistry.registerBlock(granite, ItemBlockMF1.class, "granite");
-		//GameRegistry.registerBlock(storageBlock, ItemBlockMF1.class, "sulphur_block");
+		GameRegistry.registerBlock(storage, ItemBlockMF1.class, "sulphur_block");
 		
 		//Registering slabs
 		GameRegistry.registerBlock(slateSlab1, ItemBasicSlab.class, "slate_slab1", slateSlab1, slateSlab2);

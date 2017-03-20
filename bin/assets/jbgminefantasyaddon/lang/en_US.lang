@@ -19,6 +19,8 @@ tile.jbgminefantasyaddon-granite-slab2.name=Cracked Granite Brick Slab
 tile.jbgminefantasyaddon-granite-slab3.name=Mossy Granite Brick Slab
 
 tile.jbgminefantasyaddon-storage0.name=Sulphur Block
+tile.jbgminefantasyaddon-storage1.name=Nitre Block
+tile.jbgminefantasyaddon-storage2.name=Block of Coke
 
 tile.jbgminefantasyaddon-tpad00a.name=Teleport Landing
 tile.jbgminefantasyaddon-tpad01a.name=Long Range Teleporter
