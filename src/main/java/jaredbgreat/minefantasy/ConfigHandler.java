@@ -1,5 +1,7 @@
 package jaredbgreat.minefantasy;
 
+import jaredbgreat.minefantasy.blocks.tileentities.TeletoyLogic;
+
 import java.io.File;
 
 import net.minecraftforge.common.config.Configuration;
@@ -45,6 +47,10 @@ public class ConfigHandler {
 		
 		includeGranite = config.getBoolean("IncludeGranite", "General", true, 
 				"Determines if granite will be added during world generation");
+		
+		int ttr = config.getInt("TeletoyRange", "General", 256, 0, Integer.MAX_VALUE, 
+				"The maximum range of a short range teleporter.");
+		TeletoyLogic.setMaxRange(ttr);
 		
 
 		config.save();		
