@@ -48,6 +48,7 @@ public abstract class AbstractTelepadItem extends ItemBlock {
 				TelepadBaseLogic logic = (TelepadBaseLogic)te;
 				NBTTagCompound nbt = stack.getTagCompound();
 				if(nbt == null) {
+					logic.setInactive();
 					return out;
 				}
 				double targetX = nbt.getDouble("targetX");

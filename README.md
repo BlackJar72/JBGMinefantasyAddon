@@ -13,7 +13,7 @@ which will also be available in single player.  These portals may be spun-off in
 playing with MineFantasy, and have a Doom inspired pentagram aesthetic since they were first dreamed up for a 
 Doomlike Dungeons expansion.
 
-Other than the telepads, all assets were created by Anonymous Productions or Erurion (I think? For the tan clay 
+Other than the telepads and storage blocks, all assets were created by Anonymous Productions or Erurion (I think? For the tan clay 
 walls) and were borrowed from MineFantasy I.
 
 Code under jaredbgreat.minefantasy is the creation of Jared Blackburn, and is his intellectual property.  Other 
@@ -22,7 +22,7 @@ code is the property of other authors as listen in those source files.
 While I prefer the more permissive Creative Commons lisence for most things, this does not use it, due to require 
 code from GPL'ed mods.  Therefore the code is under the Gnu General Public Lisence version 3.0 (GPL 3.0):
 
-https://www.gnu.org/licenses/old-licenses/gpl-3.0.en.html
+https://www.gnu.org/licenses/gpl-3.0.en.html
 
 (I have not yet looked into how this effects assests; I may have to modify that to fit the borrowed assets.)
 

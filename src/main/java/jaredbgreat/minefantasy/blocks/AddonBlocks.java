@@ -1,6 +1,7 @@
 package jaredbgreat.minefantasy.blocks;
 
 import static net.minecraft.block.Block.soundTypeStone;
+import jaredbgreat.minefantasy.ConfigHandler;
 import jaredbgreat.minefantasy.blocks.itemblock.ItemBasicSlab;
 import jaredbgreat.minefantasy.blocks.itemblock.ItemBlockMF1;
 import jaredbgreat.minefantasy.blocks.itemblock.TelepadItem;
@@ -21,7 +22,7 @@ public class AddonBlocks {
 	
 	public static Block slate = new BasicMetaBlock("slate", Material.rock, 4, 2.2f, 6.0f, soundTypeStone);
 	public static Block granite = new BasicMetaBlock("granite", Material.rock, 4, 5.0f, 18.0f, soundTypeStone);	
-	//public static Block storageBlock = new BasicMetaBlock("storage", Material.rock, 1, 0.7f, 1.0f, soundTypeStone);
+	public static Block storage = new BasicMetaBlock("storage", Material.rock, 3, 0.7f, 1.0f, soundTypeStone);
 	
 	
 	public static Block slateSlab1 = new BasicSlab("slate", false, Material.rock, 4, 2.2f, 6.0f, soundTypeStone);
@@ -43,7 +44,7 @@ public class AddonBlocks {
 		//Registering meta-blocks
 		GameRegistry.registerBlock(slate, ItemBlockMF1.class, "slate");
 		GameRegistry.registerBlock(granite, ItemBlockMF1.class, "granite");
-		//GameRegistry.registerBlock(storageBlock, ItemBlockMF1.class, "sulphur_block");
+		GameRegistry.registerBlock(storage, ItemBlockMF1.class, "sulphur_block");
 		
 		//Registering slabs
 		GameRegistry.registerBlock(slateSlab1, ItemBasicSlab.class, "slate_slab1", slateSlab1, slateSlab2);
@@ -52,14 +53,14 @@ public class AddonBlocks {
 		GameRegistry.registerBlock(graniteSlab2, ItemBasicSlab.class, "granite_slab2", graniteSlab1, graniteSlab2);
 		
 		//Register telepads
-		GameRegistry.registerTileEntity(TeletoyLogic.class, "TeletoyLogic");
-		GameRegistry.registerTileEntity(TelepadLogic.class, "TelepadLogic");
-		GameRegistry.registerTileEntity(LandingpadLogic.class, "LandingpadLogic");
-		GameRegistry.registerBlock(telepad, TelepadItem.class, telepad.getUnlocalizedName());
-		GameRegistry.registerBlock(teletoy, TeletoyItem.class, teletoy.getUnlocalizedName());
-		GameRegistry.registerBlock(landingpad, landingpad.getUnlocalizedName());
-		
-		Herbs.InitPlants();
+		if(ConfigHandler.includeTPs) {
+			GameRegistry.registerTileEntity(TeletoyLogic.class, "TeletoyLogic");
+			GameRegistry.registerTileEntity(TelepadLogic.class, "TelepadLogic");
+			GameRegistry.registerTileEntity(LandingpadLogic.class, "LandingpadLogic");
+			GameRegistry.registerBlock(telepad, TelepadItem.class, telepad.getUnlocalizedName());
+			GameRegistry.registerBlock(teletoy, TeletoyItem.class, teletoy.getUnlocalizedName());
+			GameRegistry.registerBlock(landingpad, landingpad.getUnlocalizedName());
+		}
 	}
 
 }

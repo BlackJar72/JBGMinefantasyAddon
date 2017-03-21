@@ -19,6 +19,8 @@ tile.jbgminefantasyaddon-granite-slab2.name=Cracked Granite Brick Slab
 tile.jbgminefantasyaddon-granite-slab3.name=Mossy Granite Brick Slab
 
 tile.jbgminefantasyaddon-storage0.name=Sulphur Block
+tile.jbgminefantasyaddon-storage1.name=Nitre Block
+tile.jbgminefantasyaddon-storage2.name=Block of Coke
 
 tile.jbgminefantasyaddon-tpad00a.name=Teleport Landing
 tile.jbgminefantasyaddon-tpad01a.name=Long Range Teleporter
@@ -31,9 +33,9 @@ tile.jbgminefantasyaddon-Camomile.name=Camomile
 tile.jbgminefantasyaddon-Horsetail.name=Horsetail
 tile.jbgminefantasyaddon-Cohosh.name=Cohosh
 
-item.jbgminefantasyaddon-aloeVera.name=Aloe Vera
-item.jbgminefantasyaddon-marshmallowroot.name=Marsh Mallow Root
-item.jbgminefantasyaddon-ginsingroot.name=Ginseng Root
+item.jbgminefantasyaddon-aloe.name=Aloe Vera
+item.jbgminefantasyaddon-marshmallow.name=Marsh Mallow Root
+item.jbgminefantasyaddon-ginseng.name=Ginseng Root
 item.jbgminefantasyaddon-camomile.name=Camomile
 item.jbgminefantasyaddon-horsetail.name=Horsetail
 item.jbgminefantasyaddon-cohosh.name=Cohosh

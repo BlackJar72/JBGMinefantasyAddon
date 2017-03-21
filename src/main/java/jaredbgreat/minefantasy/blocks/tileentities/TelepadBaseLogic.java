@@ -18,7 +18,7 @@ public abstract class TelepadBaseLogic extends TileEntity {
 	
 	
 	public void onActivated(World world, Entity entity) {
-		if(usable() && toPad(world) && (entity instanceof EntityLivingBase)) {
+		if(usable(world) && (entity instanceof EntityLivingBase)) {
 			if(entity instanceof EntityPlayerMP) {
 				EntityPlayerMP traveller = (EntityPlayerMP)entity;
 				traveller.playerNetServerHandler
@@ -73,8 +73,8 @@ public abstract class TelepadBaseLogic extends TileEntity {
 	abstract boolean inRange();
 	
 	
-	boolean usable() {
-		return (active && inRange());
+	boolean usable(World world) {
+		return (active && inRange() && toPad(world));
 	}
 	
 	
@@ -91,6 +91,14 @@ public abstract class TelepadBaseLogic extends TileEntity {
 		targetX = x;
 		targetY = y;
 		targetZ = z;
+	}
+	
+	
+	public void setInactive() {
+		active = false;
+		targetX = 0;
+		targetY = 0;
+		targetZ = 0;
 	}
 	
 	
