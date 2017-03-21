@@ -18,6 +18,7 @@ public class ConfigHandler {
 	public static boolean includeNoSpamAttack = true;
 	public static boolean includeSlate = true;
 	public static boolean includeGranite = true;
+	public static boolean includeStorage = true;
 	
 	
 	public static void init() {
@@ -55,6 +56,9 @@ public class ConfigHandler {
 		
 		includeGranite = config.getBoolean("IncludeGranite", "WorldGen", true, 
 				"Determines if granite will be added during world generation");
+		
+		includeStorage = config.getBoolean("IncludeStorageBlocks", "General", true, 
+				"Determines there will be \"storage\" blocks (e.g., sulphur blocks");
 		
 		int ttr = config.getInt("TeletoyRange", "Teleportation", 256, 0, Integer.MAX_VALUE, 
 				"The maximum range of a short range teleporter.");

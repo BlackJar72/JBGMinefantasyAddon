@@ -1,5 +1,6 @@
 package jaredbgreat.minefantasy.recipes;
 
+import jaredbgreat.minefantasy.ConfigHandler;
 import jaredbgreat.minefantasy.blocks.AddonBlocks;
 import minefantasy.mf2.item.list.ComponentListMF;
 import net.minecraft.init.Blocks;
@@ -88,6 +89,13 @@ public class BasicRecipes {
 			);
 		
 		// Recipes for storage blocks
+		if(ConfigHandler.includeStorage) {
+			addStorageBlocks();
+		}
+	}
+	
+	
+	private static void addStorageBlocks() {
 		GameRegistry.addRecipe(new ItemStack(AddonBlocks.storage, 1, 0), 
 				"sss",
 				"sss",
@@ -117,6 +125,6 @@ public class BasicRecipes {
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(ComponentListMF.nitre, 9, 0), 
 										new ItemStack(AddonBlocks.storage, 1, 1));
-	}
+		}
 
 }
