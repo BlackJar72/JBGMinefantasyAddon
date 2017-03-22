@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -77,4 +78,5 @@ public class GinsengPlant extends BlockHerb {
         	dropItem(world, x, y, z, Herbs.ginsengroot, null, 3, true);
         }
     }
+    
 }

@@ -7,15 +7,15 @@ import net.minecraft.potion.PotionHelper;
 
 public enum EHerbs {
 	
-	GINSENG (3, 2, "+4"),
+	GINSENG (3, 0.1f, "+4"),
 	// Depending on another class that might not be loaded 
 	// would be bad in some environments, but Minecraft and
 	// Forge have to be loaded for this to load.
-	MARSHMALLOW (3, 3, PotionHelper.glowstoneEffect),
-	CAMOMILE (0, 1, PotionHelper.ghastTearEffect),
-	ALOE (1, 0, PotionHelper.speckledMelonEffect),
-	HORSETAIL (1, 0, PotionHelper.magmaCreamEffect),
-	COHOSH (1, 0, PotionHelper.blazePowderEffect);
+	MARSHMALLOW (3, 0.3f, PotionHelper.glowstoneEffect),
+	CAMOMILE (0, 0.1f, PotionHelper.ghastTearEffect),
+	ALOE (1, 0f, PotionHelper.speckledMelonEffect),
+	HORSETAIL (1, 0f, PotionHelper.magmaCreamEffect),
+	COHOSH (1, 0f, PotionHelper.blazePowderEffect);
 	
 	public final int hunger;
 	public final float saturation;

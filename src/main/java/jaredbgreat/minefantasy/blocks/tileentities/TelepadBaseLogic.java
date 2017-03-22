@@ -1,5 +1,6 @@
 package jaredbgreat.minefantasy.blocks.tileentities;
 
+import jaredbgreat.minefantasy.ConfigHandler;
 import jaredbgreat.minefantasy.blocks.AddonBlocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -8,6 +9,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
@@ -19,19 +21,31 @@ public abstract class TelepadBaseLogic extends TileEntity {
 	
 	public void onActivated(World world, Entity entity) {
 		if(usable(world) && (entity instanceof EntityLivingBase)) {
-			if(entity instanceof EntityPlayerMP) {
+			if(entity instanceof EntityPlayerMP) {				
 				EntityPlayerMP traveller = (EntityPlayerMP)entity;
 				traveller.playerNetServerHandler
 						.setPlayerLocation(targetX, targetY, targetZ, 
 										   traveller.rotationYaw, traveller.rotationPitch);
 				world.playSoundEffect(targetX, yCoord, zCoord, "mob.endermen.portal", 1f, 1f);
 			} else {
-				EntityLivingBase traveller = (EntityLivingBase)entity;			
+				EntityLivingBase traveller = (EntityLivingBase)entity;	
 				traveller.setLocationAndAngles(targetX, targetY, targetZ, 
 												traveller.rotationYaw, traveller.rotationPitch);
 				world.playSoundEffect(targetX, yCoord, zCoord, "mob.endermen.portal", 1f, 1f);
 			}
 			onTrigger(entity, world);
+		}
+	}
+	
+	
+	private void telesickness(EntityLivingBase traveller) {
+		if(ConfigHandler.telesickness) {
+			// For some reason the potion effects get stuck on with the
+			// inventory gui, even when the effects are over!  Thus, not used :(
+			traveller.addPotionEffect(new PotionEffect(15,  30, 0));
+			traveller.addPotionEffect(new PotionEffect(19,  60, 0));
+			traveller.addPotionEffect(new PotionEffect(17, 100, 0));
+			traveller.addPotionEffect(new PotionEffect(9,  160, 0));
 		}
 	}
 	
