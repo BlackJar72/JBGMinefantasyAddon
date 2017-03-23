@@ -44,7 +44,9 @@ public class AddonBlocks {
 		//Registering meta-blocks
 		GameRegistry.registerBlock(slate, ItemBlockMF1.class, "slate");
 		GameRegistry.registerBlock(granite, ItemBlockMF1.class, "granite");
-		GameRegistry.registerBlock(storage, ItemBlockMF1.class, "sulphur_block");
+		if(ConfigHandler.includeStorage) {
+			GameRegistry.registerBlock(storage, ItemBlockMF1.class, "storage_block");
+		}
 		
 		//Registering slabs
 		GameRegistry.registerBlock(slateSlab1, ItemBasicSlab.class, "slate_slab1", slateSlab1, slateSlab2);

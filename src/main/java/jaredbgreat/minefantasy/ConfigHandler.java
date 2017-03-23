@@ -11,6 +11,7 @@ public class ConfigHandler {
 	
 	public static float DssFactor = -20f;
 	public static int herbRarity = 4;
+	public static float ginsengStamina = 20f;
 	
 	public static boolean includeHerbs = true;
 	public static boolean includeTPs = true;
@@ -18,7 +19,9 @@ public class ConfigHandler {
 	public static boolean includeNoSpamAttack = true;
 	public static boolean includeSlate = true;
 	public static boolean includeGranite = true;
-	
+	public static boolean includeStorage = true;
+	public static boolean herbEffects = true;
+	public static boolean telesickness = false;
 	
 	public static void init() {
 		File file = new File(ConfigHandler.configDir.toString() 
@@ -36,9 +39,15 @@ public class ConfigHandler {
 		includeHerbs = config.getBoolean("IncludeHerbs", "Herbs", true, 
 				"Determines if herbs will be added to the game");
 		
+		herbEffects = config.getBoolean("HerbPotionEffects", "Herbs", true, 
+				"If true eating potions will cause short lasting potion effect.  These will last 3 seconds.");
+		
 		herbRarity = config.getInt("HerbRarity", "Herbs", 4, 1, 65535, 
 				"Determines how frequently herbs arpper; "
 				+ "up to one in HerbRarity chunks may generate herbs.");
+		
+		ginsengStamina = config.getFloat("GinsengStamina", "Herbs", 20f, 0f, Float.MAX_VALUE, 
+				"The amount of stamina give by eating Ginseng");
 		
 		includeTPs = config.getBoolean("TelepadsExist", "Teleportation", true, 
 				"Determines if telepads (including teleport landing pads) exist");
@@ -55,6 +64,9 @@ public class ConfigHandler {
 		
 		includeGranite = config.getBoolean("IncludeGranite", "WorldGen", true, 
 				"Determines if granite will be added during world generation");
+		
+		includeStorage = config.getBoolean("IncludeStorageBlocks", "General", true, 
+				"Determines there will be \"storage\" blocks (e.g., sulphur blocks");
 		
 		int ttr = config.getInt("TeletoyRange", "Teleportation", 256, 0, Integer.MAX_VALUE, 
 				"The maximum range of a short range teleporter.");
