@@ -35,7 +35,7 @@ public class CamomilePlant extends BlockHerb {
     public boolean onBlockActivated(World world, int x, int y, int z, 
     								EntityPlayer player, int side, 
     								float fx, float fy, float fz) {
-    	return this.beGathered(world, x, y, z, player, Herbs.camomileherb, null, 3, false);
+    	return this.beGathered(world, x, y, z, player, Herbs.camomileherb, null, 2, false);
     }
     
     

@@ -10,8 +10,10 @@ public class ConfigHandler {
 	static File configDir;
 	
 	public static float DssFactor = -20f;
-	public static int herbRarity = 4;
 	public static float ginsengStamina = 20f;
+	
+	public static int herbRarity = 4;
+	public static int herbGrowChance = 32;
 	
 	public static boolean includeHerbs = true;
 	public static boolean includeTPs = true;
@@ -22,6 +24,7 @@ public class ConfigHandler {
 	public static boolean includeStorage = true;
 	public static boolean herbEffects = true;
 	public static boolean telesickness = false;
+	public static boolean transpantHerbs = true;
 	
 	public static void init() {
 		File file = new File(ConfigHandler.configDir.toString() 
@@ -45,6 +48,13 @@ public class ConfigHandler {
 		herbRarity = config.getInt("HerbRarity", "Herbs", 4, 1, 65535, 
 				"Determines how frequently herbs arpper; "
 				+ "up to one in HerbRarity chunks may generate herbs.");
+		
+		herbGrowChance = config.getInt("HerbGrowthChance", "Herbs", 32, 1, 65535, 
+				"How long it take herbs to grwo "
+				+ "(when ticked herbs have a one in this chance to grow).");
+		
+		transpantHerbs = config.getBoolean("TransplantHerbs", "Herbs", true, 
+				"Will non-root crop herbs drop the pant / block when the block under them is broken?");
 		
 		ginsengStamina = config.getFloat("GinsengStamina", "Herbs", 20f, 0f, Float.MAX_VALUE, 
 				"The amount of stamina give by eating Ginseng");

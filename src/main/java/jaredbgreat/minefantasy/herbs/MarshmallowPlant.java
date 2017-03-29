@@ -42,7 +42,7 @@ public class MarshmallowPlant extends BlockHerb {
     public boolean onBlockActivated(World world, int x, int y, int z, 
     								EntityPlayer player, int side, 
     								float fx, float fy, float fz) {
-    	return this.beGathered(world, x, y, z, player, Herbs.marshmallowroot, null, 3, true);
+    	return this.beGathered(world, x, y, z, player, Herbs.marshmallowroot, null, 2, true);
     }
     
     
@@ -75,10 +75,9 @@ public class MarshmallowPlant extends BlockHerb {
     }
     
     
-    protected void checkAndDropBlock(World world, int x, int y, int z)
-    {
+    protected void checkAndDropBlock(World world, int x, int y, int z) {
         if (!canBlockStay(world, x, y, z)) {
-        	dropItem(world, x, y, z, Herbs.marshmallowroot, null, 3, true);
+        	dropItem(world, x, y, z, Herbs.marshmallowroot, null, world.rand.nextInt(2) + 1, true);
         }
     }
 }

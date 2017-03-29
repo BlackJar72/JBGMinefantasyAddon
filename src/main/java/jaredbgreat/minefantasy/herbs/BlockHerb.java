@@ -1,5 +1,7 @@
 package jaredbgreat.minefantasy.herbs;
 
+import jaredbgreat.minefantasy.ConfigHandler;
+
 import java.util.Random;
 
 import cpw.mods.fml.relauncher.Side;
@@ -95,7 +97,7 @@ public abstract class BlockHerb extends BlockBush {
     @Override
     public void updateTick(World world, int x, int y, int z, Random random) {
     	if((world.getBlockLightValue(x, y, z) >=9) && (world.getBlockMetadata(x, y, z) != 1) 
-    			&& (random.nextInt(16) == 1)) {
+    			&& (random.nextInt(ConfigHandler.herbGrowChance) == 0)) {
     		world.setBlockMetadataWithNotify(x, y, z, 1, 2);
     	}
     }	
@@ -109,6 +111,15 @@ public abstract class BlockHerb extends BlockBush {
     	} else {
     		return icons[1];
     	}
+    }
+    
+    
+    protected void checkAndDropBlock(World world, int x, int y, int z) {
+        if (ConfigHandler.transpantHerbs) {
+        	super.checkAndDropBlock(world, x, y, z);
+        } else {
+        	world.setBlockToAir(x, y, z);
+        }
     }
     
 
