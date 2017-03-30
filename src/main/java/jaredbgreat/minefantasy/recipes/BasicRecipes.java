@@ -88,6 +88,12 @@ public class BasicRecipes {
 				'S', new ItemStack(AddonBlocks.granite, 1, 3)
 			);
 		
+
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.dye, 3, 0), 
+										new ItemStack(Items.coal, 1, 1),
+										new ItemStack(Items.potionitem, 1, 0));
+		
 		// Recipes for storage blocks
 		if(ConfigHandler.includeStorage) {
 			addStorageBlocks();
