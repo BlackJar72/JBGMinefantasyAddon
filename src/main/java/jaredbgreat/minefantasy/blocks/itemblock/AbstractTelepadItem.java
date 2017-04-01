@@ -2,6 +2,7 @@ package jaredbgreat.minefantasy.blocks.itemblock;
 
 import jaredbgreat.minefantasy.blocks.AddonBlocks;
 import jaredbgreat.minefantasy.blocks.special.AbstractTelepad;
+import jaredbgreat.minefantasy.blocks.tileentities.LandingpadLogic;
 import jaredbgreat.minefantasy.blocks.tileentities.TelepadBaseLogic;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
@@ -24,7 +25,7 @@ public abstract class AbstractTelepadItem extends ItemBlock {
 	public boolean placeBlockAt(ItemStack stack, EntityPlayer player, World world, 
 			                    int x, int y, int z, int side, float hitX, float hitY, float hitZ, 
 			                    int metadata) {
-		if(world.getBlock(x, y-1, z).equals(AddonBlocks.landingpad)) {
+		if(world.getBlock(x, y - 1, z).equals(AddonBlocks.landingpad)) {
 			NBTTagCompound nbt = stack.getTagCompound();
 			if(nbt == null) {
 				nbt = new NBTTagCompound();
@@ -33,13 +34,7 @@ public abstract class AbstractTelepadItem extends ItemBlock {
 			nbt.setDouble("targetX", ((double)x) + 0.5);
 			nbt.setDouble("targetY", ((double)y) - AbstractTelepad.LEVEL);
 			nbt.setDouble("targetZ", ((double)z) + 0.5);
-			NBTTagList lore = new NBTTagList();	
-			NBTTagCompound dis = nbt.getCompoundTag("display");
-			dis.setTag("Lore", lore);		
-			lore.appendTag(new NBTTagString("X=" + x + ", Y=" + y + ", Z=" + z));
-			dis.setTag("Lore", lore);
-			nbt.setTag("display", dis);
-			stack.setTagCompound(nbt);
+			writeLore(world, x, y, z, stack, nbt);
 			return false;
 		} else {
 			boolean out = super.placeBlockAt(stack, player, world, x, y, z, side, hitX, hitY, hitZ, metadata);
@@ -58,6 +53,26 @@ public abstract class AbstractTelepadItem extends ItemBlock {
 			}
 			return out;
 		}
+	}
+	
+	
+	private void writeLore(World world, int x, int y, int z, ItemStack stack, NBTTagCompound nbt) {
+		TileEntity te = world.getTileEntity(x, y - 1, z);
+		String locationName = null;
+		if(te instanceof LandingpadLogic) {
+			LandingpadLogic pad = (LandingpadLogic)te;
+			locationName = pad.getName();
+		}
+		NBTTagList lore = new NBTTagList();	
+		NBTTagCompound dis = nbt.getCompoundTag("display");
+		dis.setTag("Lore", lore);
+		if((locationName != null) && !locationName.isEmpty()) {
+			lore.appendTag(new NBTTagString(locationName));
+		}
+		lore.appendTag(new NBTTagString("X=" + x + ", Y=" + y + ", Z=" + z));
+		dis.setTag("Lore", lore);
+		nbt.setTag("display", dis);
+		stack.setTagCompound(nbt);
 	}
 
 }

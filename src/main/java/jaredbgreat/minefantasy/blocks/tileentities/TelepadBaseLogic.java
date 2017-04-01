@@ -28,7 +28,7 @@ public abstract class TelepadBaseLogic extends TileEntity {
 										   traveller.rotationYaw, traveller.rotationPitch);
 				world.playSoundEffect(targetX, yCoord, zCoord, "mob.endermen.portal", 1f, 1f);
 			} else {
-				EntityLivingBase traveller = (EntityLivingBase)entity;	
+				EntityLivingBase traveller = (EntityLivingBase)entity;
 				traveller.setLocationAndAngles(targetX, targetY, targetZ, 
 												traveller.rotationYaw, traveller.rotationPitch);
 				world.playSoundEffect(targetX, yCoord, zCoord, "mob.endermen.portal", 1f, 1f);
