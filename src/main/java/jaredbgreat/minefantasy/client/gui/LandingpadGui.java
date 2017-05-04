@@ -35,8 +35,8 @@ public class LandingpadGui extends GuiContainer {
     public void initGui() {
         super.initGui();
         Keyboard.enableRepeatEvents(true);
-        int i = (this.width - this.xSize) / 2;
-        int j = (this.height - this.ySize) / 2;
+        int i = (width - xSize) / 2;
+        int j = (height - ySize) / 2;
         textField = new GuiTextField(fontRendererObj, i + 32, j + 24, 128, 12);
         textField.setTextColor(-1);
         textField.setDisabledTextColour(-1);

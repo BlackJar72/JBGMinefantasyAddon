@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 public class LandingpadLogic extends TileEntity {
 	private String name = "";
 	
-	public void onTrigger(Entity enity, World world) {/*Do nothing, at least for now*/
+	public void onTrigger(Entity enity, World world) {
 		for(int i = 0; i < 128; i++) {
 			world.spawnParticle("happyVillager", 
 					xCoord + world.rand.nextDouble(), 
@@ -23,6 +23,11 @@ public class LandingpadLogic extends TileEntity {
 	
 	public String getName() {
 		return name;
+	}
+	
+	
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	

@@ -4,6 +4,7 @@ import static net.minecraft.block.Block.soundTypeStone;
 import jaredbgreat.minefantasy.ConfigHandler;
 import jaredbgreat.minefantasy.blocks.itemblock.ItemBasicSlab;
 import jaredbgreat.minefantasy.blocks.itemblock.ItemBlockMF1;
+import jaredbgreat.minefantasy.blocks.itemblock.LandingpadItem;
 import jaredbgreat.minefantasy.blocks.itemblock.TelepadItem;
 import jaredbgreat.minefantasy.blocks.itemblock.TeletoyItem;
 import jaredbgreat.minefantasy.blocks.special.Landingpad;
@@ -12,7 +13,6 @@ import jaredbgreat.minefantasy.blocks.special.Teletoy;
 import jaredbgreat.minefantasy.blocks.tileentities.LandingpadLogic;
 import jaredbgreat.minefantasy.blocks.tileentities.TelepadLogic;
 import jaredbgreat.minefantasy.blocks.tileentities.TeletoyLogic;
-import jaredbgreat.minefantasy.herbs.Herbs;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -61,7 +61,7 @@ public class AddonBlocks {
 			GameRegistry.registerTileEntity(LandingpadLogic.class, "LandingpadLogic");
 			GameRegistry.registerBlock(telepad, TelepadItem.class, telepad.getUnlocalizedName());
 			GameRegistry.registerBlock(teletoy, TeletoyItem.class, teletoy.getUnlocalizedName());
-			GameRegistry.registerBlock(landingpad, landingpad.getUnlocalizedName());
+			GameRegistry.registerBlock(landingpad, LandingpadItem.class, landingpad.getUnlocalizedName());
 		}
 	}
 
