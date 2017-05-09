@@ -14,9 +14,11 @@ package jaredbgreat.minefantasy;
  * https://creativecommons.org/licenses/by/4.0/legalcode
 */
 
+import jaredbgreat.minefantasy.blocks.tileentities.TwoWayBaseLogic;
 import jaredbgreat.minefantasy.combat.PlayerHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
+import cpw.mods.fml.relauncher.Side;
 
 /**
  * 
@@ -38,7 +40,10 @@ public final class TickHandler {
 	 */
 	@SubscribeEvent
 	public void onServerTick(TickEvent.ServerTickEvent event) {
-		playerHandler.update();
+		if(event.side == Side.SERVER) {
+			playerHandler.update();
+			TwoWayBaseLogic.updateManager();
+		}
 	}
 	
 //	// Commented out to avoid wasting resources or unused calls, 

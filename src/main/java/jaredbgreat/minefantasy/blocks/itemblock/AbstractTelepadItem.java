@@ -25,7 +25,7 @@ public abstract class AbstractTelepadItem extends ItemBlock {
 	public boolean placeBlockAt(ItemStack stack, EntityPlayer player, World world, 
 			                    int x, int y, int z, int side, float hitX, float hitY, float hitZ, 
 			                    int metadata) {
-		if(world.getBlock(x, y - 1, z).equals(AddonBlocks.landingpad)) {
+		if(LandingpadLogic.landings.contains(world.getBlock(x, y - 1, z))) {
 			NBTTagCompound nbt = stack.getTagCompound();
 			if(nbt == null) {
 				nbt = new NBTTagCompound();

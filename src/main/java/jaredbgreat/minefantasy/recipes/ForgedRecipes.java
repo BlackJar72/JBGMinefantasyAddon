@@ -65,6 +65,22 @@ public class ForgedRecipes {
 					'l', Blocks.lapis_block
 				});
 		
+//		MineFantasyAPI.addAnvilRecipe(artisanry, new ItemStack(AddonBlocks.twTeletoy), "smeltSteel", false, "hammer", -1, -1, 1000, new Object[]
+//				{
+//					"t",
+//					"l",
+//					't', AddonBlocks.teletoy,
+//					'l', AddonBlocks.landingpad,
+//				});
+		
+		MineFantasyAPI.addAnvilRecipe(artisanry, new ItemStack(AddonBlocks.twTelepad), "smeltEncrusted", false,"hammer", -1, -1, 1000, new Object[]
+				{
+					"t",
+					"l",
+					't', AddonBlocks.telepad,
+					'l', AddonBlocks.landingpad,
+				});
+		
 	}
 
 }

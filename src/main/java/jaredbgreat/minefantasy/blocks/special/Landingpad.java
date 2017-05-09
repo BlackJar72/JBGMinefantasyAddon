@@ -8,12 +8,18 @@ public class Landingpad extends AbstractTelepad {
 
 	public Landingpad() {
 		super("tpad00a");
-		setLightLevel(0.75f);		
+		setLightLevel(0.75f);
+		LandingpadLogic.landings.add(this);
+	}
+
+	public Landingpad(String name) {
+		super(name);
+		LandingpadLogic.landings.add(this);
 	}
 
 	
 	@Override
-	public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {		
+	public TileEntity createNewTileEntity(World world, int p) {		
 		return new LandingpadLogic();
 	}
 }

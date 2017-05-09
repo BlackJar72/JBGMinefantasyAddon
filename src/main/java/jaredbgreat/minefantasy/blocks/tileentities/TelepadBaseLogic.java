@@ -3,6 +3,7 @@ package jaredbgreat.minefantasy.blocks.tileentities;
 import jaredbgreat.minefantasy.ConfigHandler;
 import jaredbgreat.minefantasy.blocks.AddonBlocks;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.nbt.NBTTagCompound;
@@ -16,7 +17,7 @@ import net.minecraft.world.World;
 public abstract class TelepadBaseLogic extends TileEntity {
 	double targetX = 0d, targetY = 255d, targetZ = 0d;
 	boolean active = false;
-	private LandingpadLogic mate = null;
+	protected LandingpadLogic mate = null;
 	
 	
 	public void onActivated(World world, Entity entity) {
@@ -26,12 +27,10 @@ public abstract class TelepadBaseLogic extends TileEntity {
 				traveller.playerNetServerHandler
 						.setPlayerLocation(targetX, targetY, targetZ, 
 										   traveller.rotationYaw, traveller.rotationPitch);
-				world.playSoundEffect(targetX, yCoord, zCoord, "mob.endermen.portal", 1f, 1f);
 			} else {
 				EntityLivingBase traveller = (EntityLivingBase)entity;
 				traveller.setLocationAndAngles(targetX, targetY, targetZ, 
 												traveller.rotationYaw, traveller.rotationPitch);
-				world.playSoundEffect(targetX, yCoord, zCoord, "mob.endermen.portal", 1f, 1f);
 			}
 			onTrigger(entity, world);
 		}
@@ -96,7 +95,7 @@ public abstract class TelepadBaseLogic extends TileEntity {
 		int x = (int)(targetX - 0.5d);
 		int y = (int)targetY;
 		int z = (int)(targetZ - 0.5d);
-		return world.getBlock(x, y, z).equals(AddonBlocks.landingpad);
+		return LandingpadLogic.landings.contains(world.getBlock(x, y, z));
 	}
 	
 	
@@ -116,7 +115,7 @@ public abstract class TelepadBaseLogic extends TileEntity {
 	}
 	
 	
-	private void checkMate(World world) {
+	protected void checkMate(World world) {
 		if(mate == null) {
 			int x = (int)(targetX - 0.5d);
 			int y = (int)targetY;
@@ -135,6 +134,7 @@ public abstract class TelepadBaseLogic extends TileEntity {
 	}
 	
 	public void onTrigger(Entity entity, World world) {
+		world.playSoundEffect(xCoord, yCoord, zCoord, "mob.endermen.portal", 1f, 1f);
 		for(int i = 0; i < 128; i++) {
 			world.spawnParticle("happyVillager", 
 					xCoord + world.rand.nextDouble(), 

@@ -5,16 +5,23 @@ import jaredbgreat.minefantasy.ConfigHandler;
 import jaredbgreat.minefantasy.blocks.itemblock.ItemBasicSlab;
 import jaredbgreat.minefantasy.blocks.itemblock.ItemBlockMF1;
 import jaredbgreat.minefantasy.blocks.itemblock.LandingpadItem;
+import jaredbgreat.minefantasy.blocks.itemblock.TWTelepadItem;
+import jaredbgreat.minefantasy.blocks.itemblock.TWTeletoyItem;
 import jaredbgreat.minefantasy.blocks.itemblock.TelepadItem;
 import jaredbgreat.minefantasy.blocks.itemblock.TeletoyItem;
 import jaredbgreat.minefantasy.blocks.special.Landingpad;
+import jaredbgreat.minefantasy.blocks.special.TWTelepad;
+import jaredbgreat.minefantasy.blocks.special.TWTeletoy;
 import jaredbgreat.minefantasy.blocks.special.Telepad;
 import jaredbgreat.minefantasy.blocks.special.Teletoy;
 import jaredbgreat.minefantasy.blocks.tileentities.LandingpadLogic;
+import jaredbgreat.minefantasy.blocks.tileentities.TWTelepadLogic;
+import jaredbgreat.minefantasy.blocks.tileentities.TWTeletoyLogic;
 import jaredbgreat.minefantasy.blocks.tileentities.TelepadLogic;
 import jaredbgreat.minefantasy.blocks.tileentities.TeletoyLogic;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.init.Blocks;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class AddonBlocks {
@@ -32,6 +39,8 @@ public class AddonBlocks {
 	
 	public static Telepad telepad = new Telepad();
 	public static Teletoy teletoy = new Teletoy();
+	public static TWTelepad twTelepad = new TWTelepad();
+	public static TWTeletoy twTeletoy = new TWTeletoy();
 	public static Landingpad landingpad = new Landingpad();
 	
 	public static void register() {
@@ -58,9 +67,13 @@ public class AddonBlocks {
 		if(ConfigHandler.includeTPs) {
 			GameRegistry.registerTileEntity(TeletoyLogic.class, "TeletoyLogic");
 			GameRegistry.registerTileEntity(TelepadLogic.class, "TelepadLogic");
+			//GameRegistry.registerTileEntity(TWTeletoyLogic.class, "TWTeletoyLogic");
+			GameRegistry.registerTileEntity(TWTelepadLogic.class, "TWTelepadLogic");
 			GameRegistry.registerTileEntity(LandingpadLogic.class, "LandingpadLogic");
 			GameRegistry.registerBlock(telepad, TelepadItem.class, telepad.getUnlocalizedName());
 			GameRegistry.registerBlock(teletoy, TeletoyItem.class, teletoy.getUnlocalizedName());
+			GameRegistry.registerBlock(twTelepad, TWTelepadItem.class, twTelepad.getUnlocalizedName());
+			//GameRegistry.registerBlock(twTeletoy, TWTeletoyItem.class, twTeletoy.getUnlocalizedName());
 			GameRegistry.registerBlock(landingpad, LandingpadItem.class, landingpad.getUnlocalizedName());
 		}
 	}
