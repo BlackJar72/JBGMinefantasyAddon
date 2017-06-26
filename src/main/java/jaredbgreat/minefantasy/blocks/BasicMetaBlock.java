@@ -57,12 +57,12 @@ public class BasicMetaBlock extends Block {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta) {
-		return icons[meta];
+		return icons[meta % number];
 	}
 	
 	
 	@Override
 	public int damageDropped(int meta) {
-	    return meta;
+	    return meta % number;
 	}
 }
