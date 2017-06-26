@@ -25,9 +25,6 @@ public class AddonBlocks {
 	public static Block granite = new BasicMetaBlock("granite", Material.rock, 4, 5.0f, 18.0f, soundTypeStone);	
 	public static Block storage = new BasicMetaBlock("storage", Material.rock, 3, 0.7f, 1.0f, soundTypeStone);
 	
-	public static Block doomed = new BasicMetaBlock("doomed", Material.rock, 16, 3, 10, soundTypeStone);
-	public static Block magma = new BlockMagma();
-	
 	public static Block slateSlab1 = new BasicSlab("slate", false, Material.rock, 4, 2.2f, 6.0f, soundTypeStone);
 	public static Block slateSlab2 = new BasicSlab("slate", true, slateSlab1, Material.rock, 4, 2.2f, 6.0f, soundTypeStone);
 	public static Block graniteSlab1 = new BasicSlab("granite", false, Material.rock, 4, 5.0f, 18.0f, soundTypeStone);
@@ -42,17 +39,12 @@ public class AddonBlocks {
 		slate.setHarvestLevel("pickaxe", 1);
 		granite.setHarvestLevel("pickaxe", 2);
 		
-		//Registering basic blocks
-		GameRegistry.registerBlock(magma, "magma");
-		
 		//Registering meta-blocks
 		GameRegistry.registerBlock(slate, ItemBlockMF1.class, "slate");
 		GameRegistry.registerBlock(granite, ItemBlockMF1.class, "granite");
 		if(ConfigHandler.includeStorage) {
 			GameRegistry.registerBlock(storage, ItemBlockMF1.class, "storage_block");
 		}
-		
-		GameRegistry.registerBlock(doomed, ItemBlockMF1.class, "doomed");
 		
 		//Registering slabs
 		GameRegistry.registerBlock(slateSlab1, ItemBasicSlab.class, "slate_slab1", slateSlab1, slateSlab2);
